@@ -12,3 +12,25 @@ The site will be targeted towards individuals who require a basic yet effective 
 
 ---
 
+## User Experiences (UX)
+
+### **User Stories**
+
+**As a First-time User:**
+
++ I want to clearly understand the purpose of the site, when arriving at the home page
++ I want the website to be responsive so it can be used on any device
++ I want the registration process to be smooth and easy
+
+**As a Returning User:**
+
++ I want to easily login to my account
++ I want to be able to create, edit and delete locations
++ I want to be able to create, edit and delete stock lists
++ I want to be able to access the website from any device
+
+**As a Business Owner:**
+
++ I want the user to be able to see only there stock lists when they are logged in
++ I want to create a website that looks aesthetically pleasing on any device
++ I want the user to experience a smooth and easy process when creating, editing or deleting both locations and stock lists
