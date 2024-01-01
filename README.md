@@ -34,3 +34,11 @@ The site will be targeted towards individuals who require a basic yet effective 
 + I want the user to be able to see only there stock lists when they are logged in
 + I want to create a website that looks aesthetically pleasing on any device
 + I want the user to experience a smooth and easy process when creating, editing or deleting both locations and stock lists
+
+### **Strategy**
+
+**Site Goals**
+
+This project is based around creating a fully functional website that allows users to manipulate data records, utilising HTML, CSS, Javascript, Python, Flask and mongoDB.
+
+The main goal of the website is to allow users to create stock lists, that only they can see once they register for an account. They will need to be able to create, read, update and delete (CRUD functionality) both locations and stock lists. The website will need to be of a professional outlay with an attractive design that is both modern and simple to navigate. The site will need to be fully responsive allowing for the site to look great on all devices.
