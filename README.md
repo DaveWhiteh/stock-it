@@ -83,3 +83,28 @@ Desktop (1920 x 1080)
 <summary>Design Layout</summary>
 <img src="static/images/readme/design_layout.jpg" width="500">
 </details>
+
+### **Surface**
+
+**Colour**
+
+The colours were chosen using color-hex.com. A red-blue combination was searched for with this particular palette chosen due to the addition of pastel colours. The pastel colours were always going to be utilised within the actual web application. This was important to have the main selling point of the web application to use the bold branded colours and then for the application to have a softer feel once the user had signed up.
+
+Tints and shades of these colours were found at [maketintsandshade.com](https://maketintsandshades.com/).
+
+<details>
+<summary>Colour Palette</summary>
+<img src="static/images/readme/colour-palette.jpg" width="250">
+</details>
+
+**Typography**
+
+Chosen throughout this site was the font Poppins. It was chosen because of its simple look and very easy to read. It is also a very versatile font that has many font weights. This font is available at [Google Fonts](https://fonts.google.com/).
+
+**Images**
+
+The images within the home page were chosen specifically for there relation to the actual web application. They will have a huge impact as to the selling of the app giving the user a perfect visual as to the use of the application. All the sources where the images came from can be found within the [credits](#credits) section.
+
+**Icons**
+
+The icons within the site can be found at [Font Awesome](https://fontawesome.com/). The main icons within the site are the social media links that can be found on each page in the footer. These give the opportunity for the user to go straight to these social media sites to find out the most recent info regarding the business and the web application. The other icon is the arrow that is used within the items collapsible list.
