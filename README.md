@@ -66,3 +66,7 @@ The locations page will provide the user a place to see all there locations that
 **Items**
 
 Using the same layout as the locations page. The only differences will be that the button on the red banner will be for adding an item. Within the list of items, each element will now contain an arrow icon before the item name, that will allow the user to click and therefore activate a collapsible section. This section below will contain the text, quantity, dates, etc.
+
+### **Structure**
+
+The structure of the site will be of multiple webpages that will be linked throughout, via the use of buttons and other elements. The user will have clear instructions and be able to clearly identify what they are required to do throughout the site. The navigation throughout will allow the experience to be fluid and should they run into trouble at any point they will be directed straight back to the home page or dashboard depending on whether they are logged in or not.
