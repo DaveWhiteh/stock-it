@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock-It</title>
+</head>
+<body>
+    {% for item in items %}
+        {{ item.item_name }}<br>
+        {{ item.quantity }}<br>
+        {{ item.min_quantity }}<br>
+        {{ item.purchase_date }}<br>
+        {{ item.expiry_date }}<br>
+        {{ item.price }}<br>
+        {{ item.note }}<br>
+    {% endfor %}
+</body>
+</html>
