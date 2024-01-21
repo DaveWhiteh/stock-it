@@ -34,6 +34,12 @@ main {
     padding: 0;
 }
 
+/* --------------------------------------------------------------------------------------- Containers */
+
+.container-wrapper {
+    padding: 2rem 0; 
+}
+
 /* --------------------------------------------------------------------------------------- Background Colors */
 
 .bg-color-white {
@@ -48,6 +54,10 @@ main {
 
 .text-red {
     color: #D8031C;
+}
+
+.text-grey {
+    color: #5A5A5A;
 }
 
 /* --------------------------------------------------------------------------------------- Buttons */
@@ -130,6 +140,53 @@ ul.sidenav li a:hover {
     font-size: 110%;
 }
 
+/* --------------------------------------------------------------------------------------- Home Page */
+
+.home-title {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    line-height: 2.5rem;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li.man-list {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    line-height: 1.75rem;
+}
+
+li.man-list:last-child {
+    margin-bottom: 3rem;
+}
+
+li.man-list span {
+    font-size: 120%;
+}
+
+li i {
+    margin-right: 1rem;
+}
+
+li i.fa-location-dot {
+    margin-right: 1.5rem;
+}
+
+.home-content-image {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.home-image {
+    width: 80%;
+    margin-top: 0;
+}
+
 /* --------------------------------------------------------------------------------------- Footer */
 
 .footer-media {
@@ -163,4 +220,65 @@ ul.sidenav li a:hover {
 
 .page-footer .footer-copyright {
     background-color: inherit;
+}
+
+/* --------------------------------------------------------------------------------------- Media Queries */
+
+/* Small Mobile Devices */
+@media (min-width: 280px) and (max-width: 320px) {
+    
+
+}
+
+/* Mobile Devices - Landscape */
+@media screen and (min-width: 576px) and (max-width: 991px) and (orientation: landscape) {
+    
+
+}
+
+/* Tablet / Desktop Devices - Portrait */
+@media screen and (min-width: 768px) {
+    .jumbo-title {
+        font-size: 4rem;
+    }
+
+    .jumbo-subtitle {      
+        font-size: 200%;
+    }
+
+    .jumbo-text {
+        font-size: 140%;
+        max-width: 60%;
+    }
+
+    .home-content {
+        display: flex;
+        align-items: center;
+    }
+    
+    li.man-list {
+        margin-bottom: 0.5rem;
+        line-height: 4rem;
+    }
+    
+    li.man-list span {
+        display: flex;
+        font-size: 125%;
+    }
+
+    .home-content-image {
+        text-align: right;
+        margin-top: 0;
+    }
+
+    .home-image {
+        width: 60%;
+    }
+
+}
+
+/* Tablet / Desktop Devices - Portrait and Landscape */
+@media screen and (min-width: 992px) {
+    
+
 }

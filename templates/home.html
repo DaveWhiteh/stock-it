@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- jumbotron section start -->
     <section id="jumbotron" class="card-panel jumbotron-image" title="Stock-!t">
         <div class="container">
             <div class="row">
@@ -15,5 +16,35 @@
             </div>
         </div>
     </section>
+    <!-- jumbotron section end -->
+
+    <!-- management section start -->
+    <section id="management" class="">
+        <div class="container container-wrapper">
+            <div class="row home-content no-margin-bottom">
+                <div class="col s12 l6">
+                    <h4 class="text-blue text-semibold home-title">Inventory management made simple</h4>
+                    <ul>
+                        <li class="man-list">
+                            <i class="fas fa-globe fa-2x icon-red"></i>
+                            <span class="text-grey text-medium">Manage all stock and inventory online</span>
+                        </li>
+                        <li class="man-list">
+                            <i class="fas fa-list-ul fa-2x icon-red"></i>
+                            <span class="text-grey text-medium">Create simple, yet effective lists</span>
+                        </li>
+                        <li class="man-list">
+                            <i class="fas fa-location-dot fa-2x icon-red"></i>
+                            <span class="text-grey text-medium">Organise inventory by locations</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s12 l6 home-content-image">
+                    <img src="../static/images/home_management.webp" class="home-image" alt="Group of images showing stock-it content on mobile device">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- management section end -->
 
 {% endblock %}
