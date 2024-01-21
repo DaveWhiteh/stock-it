@@ -255,6 +255,10 @@ li i.fa-location-dot {
     background-color: inherit;
 }
 
+.page-footer {
+    border-top: 1.5px solid #01016F;
+}
+
 /* --------------------------------------------------------------------------------------- Media Queries */
 
 /* Small Mobile Devices */
