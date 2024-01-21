@@ -10,8 +10,24 @@ body {
     flex-direction: column;
 }
 
+main {
+    flex: 1 0 auto;
+}
+
+.text-medium {
+    font-weight: 500;
+}
+
 .text-semibold {
     font-weight: 600;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.no-padding {
+    padding: 0;
 }
 
 /* --------------------------------------------------------------------------------------- Background Colors */
@@ -36,7 +52,15 @@ body {
     color: #D8031C;
 }
 
+.icon-blue {
+    color: #01016F;
+}
+
 /* --------------------------------------------------------------------------------------- Navbar */
+
+nav {
+    border-bottom: 1.5px solid #01016F;
+}
 
 nav ul a {
     color: #01016F;
@@ -53,4 +77,39 @@ ul.sidenav li a {
 
 ul.sidenav li a:hover {
     background-color: #EFEFEF;
+}
+
+/* --------------------------------------------------------------------------------------- Footer */
+
+.footer-media {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-media a i:hover {
+    color: #6497BF;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+}
+
+.footer-title {
+    margin-top: 0;
+    font-weight: 600;
+    color: #01016F;
+}
+
+.footer-subtitle {
+    font-weight: 500;
+    font-size: 120%;
+    color: #D8031C;
+}
+
+.footer-text {
+    font-size: 90%;
+}
+
+.page-footer .footer-copyright {
+    background-color: inherit;
 }
