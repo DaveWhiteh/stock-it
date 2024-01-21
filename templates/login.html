@@ -4,28 +4,17 @@
     <div class="container container-wrapper">
         <div class="row center-align">
             <h3 class="white-text">Stock-!t</h3>
-            <p class="register-subtitle white-text text-medium">Register for a <span class="text-blue text-semibold">free</span> account today!</p>
+            <p class="register-subtitle white-text text-medium">Log in to your account</p>
         </div>
         <div class="row no-margin-bottom">
-            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+            <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
                 <div class="card-panel">
-                    <!-- first and last name -->
-                    <div class="row no-margin-bottom">
-                        <div class="input-field col s6">
-                            <input id="firstname" name="firstname" type="text" class="validate" required>
-                            <label for="firstname">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="lastname" name="lastname" type="text" class="validate" required>
-                            <label for="lastname">Last Name</label>
-                        </div>
-                    </div>
                     <!-- username -->
                     <div class="row no-margin-bottom">
                         <div class="input-field col s12">
                             <input id="username" name="username" type="text" minlength="5" maxlength="15"
                                 pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                            <label for="username">Username</label>
+                            <label for="username" class="text-light-blue">Username</label>
                         </div>
                     </div>
                     <!-- password -->
@@ -33,13 +22,13 @@
                         <div class="input-field col s12">
                             <input id="password" name="password" type="password" minlength="5" maxlength="15"
                                 pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                            <label for="password">Password</label>
+                            <label for="password" class="text-light-blue">Password</label>
                         </div>
                     </div>
-                    <!-- register -->
+                    <!-- login -->
                     <div class="row center-align">
                         <button type="submit" class="btn">
-                            Register
+                            Login
                         </button>
                     </div>
                     <div>
@@ -60,8 +49,8 @@
         <div class="row">
             <div class="col s12">
                 <p class="white-text link-text center-align">
-                    Already Registered?
-                    <a href="{{ url_for('login') }}" class="text-blue text-medium">Log In</a>
+                    New here?
+                    <a href="{{ url_for('register') }}" class="text-blue text-medium">Register today</a>
                 </p>
             </div>
         </div>

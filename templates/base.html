@@ -51,7 +51,7 @@
                         <li><a href="">Locations</a></li>
                         <li><a href="">Items</a></li>
                         <li><a href="">Logout</a></li>
-                        <li><a href="">Login</a></li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
                     </ul>
                 </div>
@@ -68,12 +68,12 @@
             <li><a href="">Locations</a></li>
             <li><a href="">Items</a></li>
             <li><a href="">Logout</a></li>
-            <li><a href="">Login</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
     </header>
 
-    <main class="{% if request.endpoint == 'register' %}
+    <main class="{% if (request.endpoint == 'login' or request.endpoint == 'register') %}
                     bg-color-red
                 {% endif %}">
         {% block content %}
