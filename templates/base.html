@@ -46,13 +46,13 @@
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i
                             class="fas fa-bars icon-red"></i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="">Home</a></li>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="">Dashboard</a></li>
                         <li><a href="">Locations</a></li>
                         <li><a href="">Items</a></li>
                         <li><a href="">Logout</a></li>
                         <li><a href="">Login</a></li>
-                        <li><a href="">Register</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,17 +63,19 @@
             <li>
                 <h4 class="center-align text-blue text-semibold">Stock-<span class="text-red">!</span>t</h4>
             </li>
-            <li><a href="">Home</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="">Dashboard</a></li>
             <li><a href="">Locations</a></li>
             <li><a href="">Items</a></li>
             <li><a href="">Logout</a></li>
             <li><a href="">Login</a></li>
-            <li><a href="">Register</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>
     </header>
 
-    <main>
+    <main class="{% if request.endpoint == 'register' %}
+                    bg-color-red
+                {% endif %}">
         {% block content %}
         {% endblock %}
     </main>

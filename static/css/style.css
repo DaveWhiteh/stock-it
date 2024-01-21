@@ -34,10 +34,6 @@ main {
     padding: 0;
 }
 
-.row .col {
-    padding: 0;
-}
-
 /* --------------------------------------------------------------------------------------- Containers */
 
 .container-wrapper {
@@ -54,6 +50,10 @@ main {
     background-color: #EFEFEF;
 }
 
+.bg-color-red {
+    background-color: #D8031C;
+}
+
 /* --------------------------------------------------------------------------------------- Text Colors */
 
 .text-blue {
@@ -66,6 +66,10 @@ main {
 
 .text-grey {
     color: #5A5A5A;
+}
+
+.input-field label {
+    color: #6497BF;
 }
 
 /* --------------------------------------------------------------------------------------- Buttons */
@@ -217,6 +221,13 @@ li i.fa-location-dot {
 }
 
 .devices-text {
+    font-size: 125%;
+}
+
+/* --------------------------------------------------------------------------------------- Registration */
+
+.register-subtitle {
+    margin-bottom: 0;
     font-size: 125%;
 }
 
