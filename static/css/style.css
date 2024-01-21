@@ -190,7 +190,7 @@ li i.fa-location-dot {
     margin-top: 3rem;
 }
 
-.home-image {
+.man-image {
     width: 80%;
     margin-top: 0;
 }
@@ -198,6 +198,17 @@ li i.fa-location-dot {
 .caption-text {
     font-size: 110%;
     line-height: 2.25rem;
+}
+
+.home-image {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    display: block;
 }
 
 /* --------------------------------------------------------------------------------------- Footer */
@@ -284,7 +295,7 @@ li i.fa-location-dot {
         margin-top: 0;
     }
 
-    .home-image {
+    .man-image {
         width: 60%;
     }
 
