@@ -22,6 +22,10 @@ main {
     font-weight: 600;
 }
 
+.no-margin-top {
+    margin-top: 0;
+}
+
 .no-margin-bottom {
     margin-bottom: 0;
 }
@@ -44,6 +48,10 @@ main {
 
 .bg-color-white {
     background-color: #FFFFFF;
+}
+
+.bg-color-grey {
+    background-color: #EFEFEF;
 }
 
 /* --------------------------------------------------------------------------------------- Text Colors */
@@ -185,6 +193,11 @@ li i.fa-location-dot {
 .home-image {
     width: 80%;
     margin-top: 0;
+}
+
+.caption-text {
+    font-size: 110%;
+    line-height: 2.25rem;
 }
 
 /* --------------------------------------------------------------------------------------- Footer */
