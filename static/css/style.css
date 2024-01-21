@@ -211,6 +211,15 @@ li i.fa-location-dot {
     display: block;
 }
 
+.devices-title {
+    font-size: 2rem;
+    max-width: 60%;
+}
+
+.devices-text {
+    font-size: 125%;
+}
+
 /* --------------------------------------------------------------------------------------- Footer */
 
 .footer-media {
