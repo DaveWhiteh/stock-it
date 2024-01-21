@@ -30,6 +30,10 @@ main {
     padding: 0;
 }
 
+.row .col {
+    padding: 0;
+}
+
 /* --------------------------------------------------------------------------------------- Background Colors */
 
 .bg-color-white {
@@ -44,6 +48,20 @@ main {
 
 .text-red {
     color: #D8031C;
+}
+
+/* --------------------------------------------------------------------------------------- Buttons */
+
+.btn, .btn-large, .btn-small {
+    font-weight: 600;
+    border-radius: 32px;
+    text-align: center;
+    background-color: #01016F;
+    color: #FFFFFF;
+}
+
+.btn:hover {
+    background-color: #6497BF;  
 }
 
 /* --------------------------------------------------------------------------------------- Icons */
@@ -77,6 +95,39 @@ ul.sidenav li a {
 
 ul.sidenav li a:hover {
     background-color: #EFEFEF;
+}
+
+/* --------------------------------------------------------------------------------------- Jumbotron */
+
+.jumbotron-image {
+    height: 75vh;
+    background-image: url('../images/jumbotron.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px rgba(0,0,0,0);
+    margin: 0;
+}
+
+#jumbotron .container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.jumbo-content {
+    text-align: left;
+}
+
+.jumbo-subtitle {
+    margin-bottom: 125px;
+    font-size: 125%;
+}
+
+.jumbo-text {  
+    font-size: 110%;
 }
 
 /* --------------------------------------------------------------------------------------- Footer */
