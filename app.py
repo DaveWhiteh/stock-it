@@ -96,6 +96,14 @@ def dashboard(locations,items):
     return redirect(url_for("login"))
 
 
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
 @app.route("/get_items")
 def get_items():
     items = list(mongo.db.items.find())

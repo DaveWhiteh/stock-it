@@ -50,7 +50,7 @@
                         <li><a href="{{ url_for('dashboard', locations='locations_count()', items='items_count()') }}">Dashboard</a></li>
                         <li><a href="">Locations</a></li>
                         <li><a href="">Items</a></li>
-                        <li><a href="">Logout</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         <li><a href="{{ url_for('login') }}">Login</a></li>
                         <li><a href="{{ url_for('register') }}">Register</a></li>
                     </ul>
@@ -67,7 +67,7 @@
             <li><a href="{{ url_for('dashboard', locations='locations_count()', items='items_count()') }}">Dashboard</a></li>
             <li><a href="">Locations</a></li>
             <li><a href="">Items</a></li>
-            <li><a href="">Logout</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>
         </ul>

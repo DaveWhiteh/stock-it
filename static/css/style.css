@@ -40,6 +40,10 @@ main {
     padding: 2rem 0; 
 }
 
+.container-wrapper-1 {
+    padding: 1rem 0;
+}
+
 /* --------------------------------------------------------------------------------------- Background Colors */
 
 .bg-color-white {
