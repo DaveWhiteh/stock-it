@@ -45,6 +45,9 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        locations = locations_count()
+        items = items_count()
+        return redirect(url_for("dashboard", locations=locations, items=items))
     return render_template("register.html")
 
 
@@ -61,6 +64,9 @@ def login():
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome, {}".format(request.form.get("username")))
+                    locations = locations_count()
+                    items = items_count()
+                    return redirect(url_for("dashboard", locations=locations, items=items))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -74,10 +80,62 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/dashboard/<locations>/<items>", methods=["GET", "POST"])
+def dashboard(locations,items):
+    if "user" not in session:
+        flash ("You must be logged in")
+
+    # get the total number of locations from db
+    locations = locations_count()
+    # get the total number of items from db
+    items = items_count()
+
+    if session["user"]:
+        return render_template("dashboard.html", locations=locations, items=items)
+
+    return redirect(url_for("login"))
+
+
 @app.route("/get_items")
 def get_items():
     items = list(mongo.db.items.find())
     return render_template("items.html", items=items)
+
+
+def get_user_id():
+    # Get the current user_id from db
+    user = mongo.db.users.find_one({"username": session["user"]})
+    # For testing purposes
+    print(user)
+    user_id = str(user["_id"])
+    #For testing purposes
+    print(user_id)
+
+    return user_id
+
+
+def locations_count():
+    # Get the current user_id from db
+    user_id = get_user_id()
+
+    # Get the count of the locations from db
+    count = mongo.db.locations.count_documents({"user_id": user_id})
+    # For testing purposes
+    print(count)
+
+    return count
+
+
+def items_count():
+    # Get the current user_id from db
+    user_id = get_user_id()
+
+    # Get the count of the locations from db
+    count = mongo.db.items.count_documents({"user_id": user_id})
+    # For testing purposes
+    print(count)
+
+    return count
 
 
 if __name__ == "__main__":

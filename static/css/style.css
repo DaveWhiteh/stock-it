@@ -54,6 +54,10 @@ main {
     background-color: #D8031C;
 }
 
+.bg-color-light-blue {
+    background-color: #6497BF;
+}
+
 /* --------------------------------------------------------------------------------------- Text Colors */
 
 .text-blue {
@@ -66,6 +70,10 @@ main {
 
 .text-grey {
     color: #5A5A5A;
+}
+
+.text-light-blue {
+    color: #6497BF;
 }
 
 .input-field label {
@@ -233,6 +241,12 @@ li i.fa-location-dot {
 
 .link-text a:hover {
     color: #6497BF;
+}
+
+/* --------------------------------------------------------------------------------------- Dashboard */
+
+.dash-num {
+    font-size: 3rem;
 }
 
 /* --------------------------------------------------------------------------------------- Footer */
