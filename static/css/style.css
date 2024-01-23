@@ -108,6 +108,16 @@ main {
     color: #01016F;
 }
 
+/* --------------------------------------------------------------------------------------- Misc */
+
+.dropdown-content li>a, .dropdown-content li>span {
+    font-size: 90%;
+    color: #01016F;
+    display: block;
+    line-height: 22px;
+    padding: 14px 14px;
+}
+
 /* --------------------------------------------------------------------------------------- Navbar */
 
 nav {
