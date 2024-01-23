@@ -116,6 +116,32 @@ def get_locations():
     return render_template("locations.html", locations=locations)
 
 
+@app.route("/add_location", methods=["GET", "POST"])
+def add_location():
+    if "user" not in session:
+        flash ("You must be logged in")
+        return redirect(url_for("login"))
+
+    if request.method == "POST":
+        user_id = get_user_id()
+        location = {
+            "user_id": user_id,
+            "location_name": request.form.get("location_name")
+        }
+
+        location_name_exist = mongo.db.locations.count_documents({"user_id": user_id, "location_name": {'$eq': request.form.get("location_name")}})
+
+        if location_name_exist >= 1:
+            flash ("Location already exists")
+            return redirect(url_for("add_location"))
+
+        mongo.db.locations.insert_one(location)
+        flash("Location Successfully Added")
+        return redirect(url_for("get_locations"))
+
+    return render_template("add_location.html")
+
+
 @app.route("/get_items")
 def get_items():
     items = list(mongo.db.items.find())

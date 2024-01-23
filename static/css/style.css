@@ -54,6 +54,10 @@ main {
     background-color: #EFEFEF;
 }
 
+.bg-color-dark-grey {
+    background-color: #D9D9D9;
+}
+
 .bg-color-red {
     background-color: #D8031C;
 }
