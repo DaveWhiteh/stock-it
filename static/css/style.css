@@ -88,6 +88,10 @@ main {
     color: #6497BF;
 }
 
+.input-field .valid[type=text] {
+    color: #01016F;
+}
+
 /* --------------------------------------------------------------------------------------- Buttons */
 
 .btn, .btn-large, .btn-small {
@@ -128,6 +132,10 @@ main {
 
 .switch label input[type=checkbox]:checked+.lever:after {
     background-color: #01016F;
+}
+
+.card-panel {
+    border-radius: 8px;
 }
 
 /* --------------------------------------------------------------------------------------- Navbar */
