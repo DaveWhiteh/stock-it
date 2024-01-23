@@ -35,28 +35,30 @@
 
 <body>
 
-    <header class="navbar-fixed">
+    <header>
         <!-- top navbar -->
-        <nav class="nav-extended z-depth-0 bg-color-white">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <a href="{{ url_for('home') }}" class="brand-logo left">
-                        <div class="text-blue text-semibold">Stock-<span class="text-red">!</span>t</div>
-                    </a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i
-                            class="fas fa-bars icon-red"></i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="{{ url_for('home') }}">Home</a></li>
-                        <li><a href="{{ url_for('dashboard', locations='locations_count()', items='items_count()') }}">Dashboard</a></li>
-                        <li><a href="{{ url_for('get_locations') }}">Locations</a></li>
-                        <li><a href="">Items</a></li>
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
-                        <li><a href="{{ url_for('login') }}">Login</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
-                    </ul>
+        <div class="navbar-fixed">
+            <nav class="nav-extended z-depth-0 bg-color-white">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="{{ url_for('home') }}" class="brand-logo left">
+                            <div class="text-blue text-semibold">Stock-<span class="text-red">!</span>t</div>
+                        </a>
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i
+                                class="fas fa-bars icon-red"></i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <li><a href="{{ url_for('dashboard', locations='locations_count()', items='items_count()') }}">Dashboard</a></li>
+                            <li><a href="{{ url_for('get_locations') }}">Locations</a></li>
+                            <li><a href="">Items</a></li>
+                            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                            <li><a href="{{ url_for('login') }}">Login</a></li>
+                            <li><a href="{{ url_for('register') }}">Register</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
 
         <!-- mobile sidenav -->
         <ul class="sidenav right" id="mobile-demo">
