@@ -44,7 +44,7 @@
 
             <!-- Dropdown Structure -->
             <ul id='dropdown-actions-{{ location.location_name }}' class='dropdown-content'>
-                <li><a href="">edit</a></li>
+                <li><a href="{{ url_for('edit_location', location_id=location._id) }}">edit</a></li>
                 <li><a href="">delete</a>
                 </li>
             </ul>

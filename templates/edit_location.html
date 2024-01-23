@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}    
+
+<div class="container-wrapper bg-color-light-blue">
+    <div class="container">
+        <div class="row center-align no-margin-bottom">
+            <div class="col s12">
+                <h5 class="white-text no-margin-top no-margin-bottom"><span class="text-red">Edit</span> location</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container container-wrapper">
+    <div class="row no-margin-bottom">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_location', location_id=location._id) }}">
+            <div class="card-panel">
+                <!-- location_name -->
+                <div class="row no-margin-bottom">
+                    <div class="input-field col s12">
+                        <input id="location_name" name="location_name" value="{{ location.location_name }}" type="text" class="validate" required>
+                        <label for="location_name" class="text-light-blue">Name</label>
+                    </div>
+                </div>
+                <!-- cancel / submit -->
+                <div class="row center-align">
+                    <a href="{{ url_for('get_locations') }}" class="btn btn--cancel">
+                        Cancel
+                    </a>
+                    <button type="submit" class="btn">
+                        Edit Location
+                    </button>
+                </div>
+                <div>
+                    <!-- flash messages -->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <div class="row flashes">
+                                <p class="light-blue lighten-4 center-align">{{ message }}</p>
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
