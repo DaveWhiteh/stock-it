@@ -169,6 +169,39 @@ def edit_location(location_id):
     return render_template("edit_location.html", location=location)
 
 
+@app.route("/delete_location/<location_id>")
+def delete_location(location_id):
+    if "user" not in session:
+        flash ("You must be logged in")
+        return redirect(url_for("login"))
+
+    location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
+    if not location:
+        flash("Location not found")
+        return redirect(url_for("get_locations"))
+
+    return render_template("delete_location.html", location=location)
+
+
+@app.route("/delete_location_confirm/<location_id>", methods=["GET", "POST"])
+def delete_location_confirm(location_id):
+    if request.method == "POST":
+        if request.form.get("delete_all_items"):
+            mongo.db.items.delete_many({"location_id": location_id})
+        mongo.db.locations.delete_one({"_id": ObjectId(location_id)})
+
+        if request.form.get("delete_all_items"):
+            flash("Location and Items Successfully Deleted")
+            return redirect(url_for("get_locations"))
+        else:
+            flash("Location Successfully Deleted")
+            return redirect(url_for("get_locations"))
+
+    else:
+        flash("Invalid request")
+        return redirect(url_for("get_locations"))
+
+
 @app.route("/get_items")
 def get_items():
     items = list(mongo.db.items.find())

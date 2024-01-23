@@ -122,6 +122,14 @@ main {
     padding: 14px 14px;
 }
 
+.switch label input[type=checkbox]:checked+.lever {
+    background-color: #D8031C;
+}
+
+.switch label input[type=checkbox]:checked+.lever:after {
+    background-color: #01016F;
+}
+
 /* --------------------------------------------------------------------------------------- Navbar */
 
 nav {

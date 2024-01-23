@@ -79,7 +79,7 @@
                     bg-color-red
                 {% elif request.endpoint == 'dashboard' %}
                     bg-color-grey
-                {% elif request.endpoint == 'add_location' %}
+                {% elif request.endpoint == 'add_location' or request.endpoint == 'edit_location' or request.endpoint == 'delete_location' %}
                     bg-color-dark-grey
                 {% endif %}">
         {% block content %}
