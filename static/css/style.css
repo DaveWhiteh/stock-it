@@ -253,6 +253,34 @@ li i.fa-location-dot {
     font-size: 3rem;
 }
 
+/* --------------------------------------------------------------------------------------- Locations */
+
+.col.s6.title-left {
+    padding-left: 0;
+}
+
+.col.s6.title-right {
+    padding-right: 0;
+}
+
+/* --------------------------------------------------------------------------------------- Locations */
+
+.locations {
+    color: #6497BF;
+    background-color: #F5F5F5;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+a {
+    color: inherit; 
+}
+
+.locations-icon {
+    font-size: 1.6rem;
+}
+
 /* --------------------------------------------------------------------------------------- Footer */
 
 .footer-media {

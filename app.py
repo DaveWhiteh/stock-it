@@ -104,6 +104,18 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/get_locations")
+def get_locations():
+    if "user" not in session:
+        flash ("You must be logged in")
+        return redirect(url_for("login"))
+
+    user_id = get_user_id()
+
+    locations = list(mongo.db.locations.find({"user_id": {'$eq': user_id}}).sort("location_name", 1))
+    return render_template("locations.html", locations=locations)
+
+
 @app.route("/get_items")
 def get_items():
     items = list(mongo.db.items.find())

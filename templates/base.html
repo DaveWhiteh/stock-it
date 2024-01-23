@@ -48,7 +48,7 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('home') }}">Home</a></li>
                         <li><a href="{{ url_for('dashboard', locations='locations_count()', items='items_count()') }}">Dashboard</a></li>
-                        <li><a href="">Locations</a></li>
+                        <li><a href="{{ url_for('get_locations') }}">Locations</a></li>
                         <li><a href="">Items</a></li>
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
                         <li><a href="{{ url_for('login') }}">Login</a></li>
@@ -65,7 +65,7 @@
             </li>
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('dashboard', locations='locations_count()', items='items_count()') }}">Dashboard</a></li>
-            <li><a href="">Locations</a></li>
+            <li><a href="{{ url_for('get_locations') }}">Locations</a></li>
             <li><a href="">Items</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
             <li><a href="{{ url_for('login') }}">Login</a></li>
