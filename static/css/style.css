@@ -124,6 +124,7 @@ main {
     display: block;
     line-height: 22px;
     padding: 14px 14px;
+    font-weight: 500;
 }
 
 .switch label input[type=checkbox]:checked+.lever {
@@ -416,6 +417,23 @@ a {
 
 }
 
+/* Mobile Devices - Portrait */
+@media screen and (max-width: 767px) {
+    .container-items {
+        width: 100%;
+        max-width:initial;
+    }
+
+    .container-items > .row {
+        margin: 0;
+    }
+
+    .container-items > .row > .col {
+        padding: 0;
+    }
+
+}
+
 /* Tablet / Desktop Devices - Portrait */
 @media screen and (min-width: 768px) {
     .jumbo-title {
@@ -453,6 +471,13 @@ a {
 
     .man-image {
         width: 60%;
+    }
+
+    .collapsible-header {
+        background-color: #F5F5F5;
+        border-bottom: none;
+        margin-bottom: 20px;
+        border-radius: 8px;
     }
 
 }
