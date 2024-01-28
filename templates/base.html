@@ -50,7 +50,7 @@
                             <li><a href="{{ url_for('home') }}">Home</a></li>
                             <li><a href="{{ url_for('dashboard', username=session['user']) }}">Dashboard</a></li>
                             <li><a href="{{ url_for('get_locations') }}">Locations</a></li>
-                            <li><a href="">Items</a></li>
+                            <li><a href="{{ url_for('get_items_all') }}">Items</a></li>
                             <li><a href="{{ url_for('logout') }}">Logout</a></li>
                             <li><a href="{{ url_for('login') }}">Login</a></li>
                             <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -68,7 +68,7 @@
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('dashboard', username=session['user']) }}">Dashboard</a></li>
             <li><a href="{{ url_for('get_locations') }}">Locations</a></li>
-            <li><a href="">Items</a></li>
+            <li><a href="{{ url_for('get_items_all') }}">Items</a></li>
             <li><a href="{{ url_for('logout') }}">Logout</a></li>
             <li><a href="{{ url_for('login') }}">Login</a></li>
             <li><a href="{{ url_for('register') }}">Register</a></li>

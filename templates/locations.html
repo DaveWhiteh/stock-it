@@ -35,7 +35,7 @@
     {% for location in locations %}
     <div class="row locations valign-wrapper">       
         <div class="col s3">
-                <a href="">{{ location.location_name }}</a>
+                <a href="{{ url_for('get_items', location_id=location._id) }}">{{ location.location_name }}</a>
         </div>
         <div class="col s9">
             <!-- Dropdown Trigger -->

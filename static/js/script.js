@@ -3,4 +3,5 @@ $(document).ready(function () {
         edge: "right"
     });
     $('.dropdown-trigger').dropdown();
+    $('.collapsible').collapsible();
 });

@@ -293,8 +293,6 @@ li i.fa-location-dot {
     padding-right: 0;
 }
 
-/* --------------------------------------------------------------------------------------- Locations */
-
 .locations {
     color: #6497BF;
     background-color: #F5F5F5;
@@ -309,6 +307,39 @@ a {
 
 .locations-icon {
     font-size: 1.6rem;
+}
+
+/* --------------------------------------------------------------------------------------- Items */
+
+.collapsible {
+    box-shadow: none;
+    border: none;
+    margin-top: 0;
+}
+
+.collapsible li i {
+    margin: 0;
+}
+
+.collapsible-header:hover {
+    background-color: #EFEFEF;
+}
+
+.collapsible li.active i.fas.fa-caret-right {
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+.collapsible-body {
+    border-bottom: none;
+}
+
+.col.s12.items {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* --------------------------------------------------------------------------------------- Footer */

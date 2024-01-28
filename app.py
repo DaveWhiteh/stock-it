@@ -200,10 +200,28 @@ def delete_location_confirm(location_id):
         return redirect(url_for("get_locations"))
 
 
-@app.route("/get_items")
-def get_items():
-    items = list(mongo.db.items.find())
+@app.route("/get_items_all")
+def get_items_all():
+    if "user" not in session:
+        flash ("You must be logged in")
+        return redirect(url_for("login"))
+    
+    user_id = get_user_id()
+
+    items = list(mongo.db.items.find({"user_id": {'$eq': user_id}}))
     return render_template("items.html", items=items)
+
+
+@app.route("/get_items/<location_id>")
+def get_items(location_id):
+    if "user" not in session:
+        flash ("You must be logged in")
+        return redirect(url_for("login"))
+
+    location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
+    location_name = location["location_name"]
+    items = list(mongo.db.items.find({"location_id": {'$eq': location_id}}))
+    return render_template("items.html", items=items, location_id=location_id, location_name=location_name)
 
 
 def get_user_id():
