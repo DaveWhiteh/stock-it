@@ -317,12 +317,33 @@ a {
     margin-top: 0;
 }
 
-.collapsible li i {
-    margin: 0;
-}
-
 .collapsible-header:hover {
     background-color: #EFEFEF;
+}
+
+.header-table {
+    width: 100%;
+    border-collapse: initial;
+}
+
+.table-header {
+    width: 5%;
+}
+
+.header-table tr td {
+    width: 45%;
+}
+
+.body-table {
+    width: 100%;
+}
+
+.body-table tr th {
+    width: 15%;
+}
+
+.collapsible li i {
+    margin: 0;
 }
 
 .collapsible li.active i.fas.fa-caret-right {
