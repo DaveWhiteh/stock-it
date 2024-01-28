@@ -80,7 +80,7 @@
                                         
                                         <!-- Dropdown Structure -->
                                         <ul id='dropdown-actions-{{ item.item_name }}' class='dropdown-content'>
-                                            <li><a href="">edit</a></li>
+                                            <li><a href="{{ url_for('edit_item', location_id=item.location_id, item_id=item._id) }}">edit</a></li>
                                             <li><a href="">delete</a></li>
                                         </ul>
                                     </th>

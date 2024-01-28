@@ -266,6 +266,49 @@ def add_item(location_id):
     return render_template("add_item.html", locations=locations, location_id=location_id)
 
 
+@app.route("/edit_item/<location_id>/<item_id>", methods=["GET", "POST"])
+def edit_item(location_id,item_id):
+    if "user" not in session:
+        flash ("You must be logged in")
+        return redirect(url_for("login"))
+    
+    user_id = get_user_id()
+
+    if request.method == "POST":
+        location = mongo.db.locations.find_one({"location_name": {'$eq': request.form.get("location_name")}})
+        new_location_id = str(location["_id"])
+
+        submit = {
+            "user_id": user_id,
+            "location_id": new_location_id,
+            "location_name": request.form.get("location_name"),
+            "item_name": request.form.get("item_name"),
+            "quantity": request.form.get("quantity"),
+            "min_quantity": request.form.get("min_quantity"),
+            "purchase_date": request.form.get("purchase_date"),
+            "expiry_date": request.form.get("expiry_date"),
+            "price": request.form.get("price"),
+            "note": request.form.get("note")
+        }
+
+        item = mongo.db.items.find_one({"user_id": user_id, "item_name": {'$eq': request.form.get("item_name")}})
+        item_id_check = str(item["_id"])
+        
+        if item_id == item_id_check:
+            mongo.db.items.replace_one({"_id": ObjectId(item_id)}, submit)
+            flash("Item Successfully Edited")
+            return redirect(url_for("get_items", location_id=new_location_id))
+        else:
+            flash ("Item already exists")
+            return redirect(url_for("edit_item", location_id=new_location_id, item_id=item_id))
+
+        
+
+    item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
+    locations = mongo.db.locations.find({"user_id": {'$eq': user_id}}).sort("location_name", 1)
+    return render_template("edit_item.html", location_id=location_id, locations=locations, item=item)
+
+
 def get_user_id():
     # Get the current user_id from db
     user = mongo.db.users.find_one({"username": session["user"]})
