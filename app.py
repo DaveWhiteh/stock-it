@@ -302,11 +302,34 @@ def edit_item(location_id,item_id):
             flash ("Item already exists")
             return redirect(url_for("edit_item", location_id=new_location_id, item_id=item_id))
 
-        
-
     item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
     locations = mongo.db.locations.find({"user_id": {'$eq': user_id}}).sort("location_name", 1)
     return render_template("edit_item.html", location_id=location_id, locations=locations, item=item)
+
+
+@app.route("/delete_item/<location_id>/<item_id>")
+def delete_item(location_id,item_id):
+    if "user" not in session:
+        flash ("You must be logged in")
+        return redirect(url_for("login"))
+
+    item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
+    if not item:
+        flash("Item not found")
+        return redirect(url_for("get_items", location_id=location_id))
+
+    return render_template("delete_item.html", location_id=location_id, item=item)
+
+
+@app.route("/delete_item_confirm/<location_id>/<item_id>", methods=["GET", "POST"])
+def delete_item_confirm(location_id,item_id):
+    if request.method == "POST":
+        mongo.db.items.delete_one({"_id": ObjectId(item_id)})
+        flash("Item Successfully Deleted")
+        return redirect(url_for("get_items", location_id=location_id))
+    else:
+        flash("Invalid request")
+        return redirect(url_for("get_items", location_id=location_id))
 
 
 def get_user_id():
