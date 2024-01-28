@@ -208,7 +208,7 @@ def get_items_all():
     
     user_id = get_user_id()
 
-    items = list(mongo.db.items.find({"user_id": {'$eq': user_id}}))
+    items = list(mongo.db.items.find({"user_id": {'$eq': user_id}}).sort("item_name", 1))
     return render_template("items.html", items=items)
 
 
@@ -220,7 +220,7 @@ def get_items(location_id):
 
     location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
     location_name = location["location_name"]
-    items = list(mongo.db.items.find({"location_id": {'$eq': location_id}}))
+    items = list(mongo.db.items.find({"location_id": {'$eq': location_id}}).sort("item_name", 1))
     return render_template("items.html", items=items, location_id=location_id, location_name=location_name)
 
 
