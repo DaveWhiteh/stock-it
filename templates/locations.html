@@ -31,11 +31,23 @@
     </div>
 </div>
 
+<div class="container-wrapper-1">
+    <div class="container">
+        <div class="row no-margin-bottom">
+            <div class="col s12 no-padding">
+                <a href="{{ url_for('dashboard') }}" class="text-blue breadcrumbs">Dashboard</a>
+                <i class="fa-solid fa-angle-right icon-red"></i>
+                <a href="{{ url_for('get_locations') }}" class="text-blue breadcrumbs"> Locations</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container container-wrapper">
     {% for location in locations %}
     <div class="row locations valign-wrapper">       
         <div class="col s3">
-                <a href="{{ url_for('get_items', location_id=location._id) }}">{{ location.location_name }}</a>
+                <a href="{{ url_for('get_items', location_id=location._id) }}" class="text-medium">{{ location.location_name }}</a>
         </div>
         <div class="col s9">
             <!-- Dropdown Trigger -->

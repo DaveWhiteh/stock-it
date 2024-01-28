@@ -3,11 +3,15 @@
 
 <div class="container-wrapper bg-color-red">
     <div class="container">
-        <div class="row no-margin-bottom">
-            <div class="col s6">
-                <a href="{{ url_for('get_locations') }}"><h5 class="white-text text-medium no-margin-top no-margin-bottom">{{ location_name }}</h5></a>
+        <div class="row no-margin-bottom valign-wrapper">
+            <div class="col s6 title-left">
+                {% if request.endpoint == 'get_items' %}
+                    <a href="{{ url_for('get_locations') }}"><h5 class="white-text text-medium no-margin-top no-margin-bottom">Items</h5></a>
+                {% else %}
+                    <a href="{{ url_for('get_locations') }}"><h5 class="white-text text-medium no-margin-top no-margin-bottom">{{ location_name }}</h5></a>
+                {% endif %}
             </div>
-            <div class="col s6 right-align">
+            <div class="col s6 right-align title-right">
                 <a href="" class="btn">Add Item</a>
             </div>
         </div>
@@ -27,6 +31,25 @@
                     {% endfor %}
                 {% endif %}
             {% endwith %}
+        </div>
+    </div>
+</div>
+
+<div class="container-wrapper-1">
+    <div class="container">
+        <div class="row no-margin-bottom">
+            <div class="col s12 no-padding">
+                <a href="{{ url_for('dashboard') }}" class="text-blue breadcrumbs">Dashboard</a>
+                {% if request.endpoint == 'get_items' %}
+                    <i class="fa-solid fa-angle-right icon-red"></i>
+                    <a href="{{ url_for('get_locations') }}" class="text-blue breadcrumbs"> Locations</a>
+                    <i class="fa-solid fa-angle-right icon-red"></i>
+                    <span class="text-blue"> {{ location_name }}</span>
+                {% else %}
+                    <i class="fa-solid fa-angle-right icon-red"></i>
+                    <a href="{{ url_for('get_items_all') }}" class="text-blue breadcrumbs"> Items</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
