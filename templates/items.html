@@ -6,13 +6,17 @@
         <div class="row no-margin-bottom valign-wrapper">
             <div class="col s6 title-left">
                 {% if request.endpoint == 'get_items' %}
-                    <a href="{{ url_for('get_locations') }}"><h5 class="white-text text-medium no-margin-top no-margin-bottom">Items</h5></a>
+                    <h5 class="white-text text-medium no-margin-top no-margin-bottom">{{ location_name }}</h5>
                 {% else %}
-                    <a href="{{ url_for('get_locations') }}"><h5 class="white-text text-medium no-margin-top no-margin-bottom">{{ location_name }}</h5></a>
+                    <h5 class="white-text text-medium no-margin-top no-margin-bottom">Items</h5>
                 {% endif %}
             </div>
             <div class="col s6 right-align title-right">
-                <a href="" class="btn">Add Item</a>
+                {% if request.endpoint == 'get_items' %}
+                    <a href="{{ url_for('add_item', location_id=location_id) }}" class="btn">Add Item</a>
+                {% else %}
+                    <a href="{{ url_for('add_item', location_id='none') }}" class="btn">Add Item</a>
+                {% endif %}
             </div>
         </div>
     </div>

@@ -224,6 +224,48 @@ def get_items(location_id):
     return render_template("items.html", items=items, location_id=location_id, location_name=location_name)
 
 
+@app.route("/add_item/<location_id>", methods=["GET", "POST"])
+def add_item(location_id):
+    if "user" not in session:
+        flash ("You must be logged in")
+        return redirect(url_for("login"))
+    
+    user_id = get_user_id()
+
+    if request.method == "POST":
+        if location_id == 'none':
+            location_id = get_location_id(user_id, request.form.get("location_name"))
+        
+        item = {
+            "user_id": user_id,
+            "location_id": location_id,
+            "location_name": request.form.get("location_name"),
+            "item_name": request.form.get("item_name"),
+            "quantity": request.form.get("quantity"),
+            "min_quantity": request.form.get("min_quantity"),
+            "purchase_date": request.form.get("purchase_date"),
+            "expiry_date": request.form.get("expiry_date"),
+            "price": request.form.get("price"),
+            "note": request.form.get("note")
+        }
+
+        location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
+        location_name = location["location_name"]
+
+        item_name_exist = mongo.db.items.count_documents({"user_id": user_id, "item_name": {'$eq': request.form.get("item_name")}})
+
+        if item_name_exist >= 1:
+            flash ("Item already exists")
+            return redirect(url_for("add_item", location_id=location_id))
+
+        mongo.db.items.insert_one(item)
+        flash("Item Successfully Added")
+        return redirect(url_for("get_items", location_id=location_id))
+    
+    locations = mongo.db.locations.find({"user_id": {'$eq': user_id}}).sort("location_name", 1)
+    return render_template("add_item.html", locations=locations, location_id=location_id)
+
+
 def get_user_id():
     # Get the current user_id from db
     user = mongo.db.users.find_one({"username": session["user"]})
@@ -234,6 +276,18 @@ def get_user_id():
     print(user_id)
 
     return user_id
+
+
+def get_location_id(user_id, location_name):
+    #Get the location_id from db
+    location = mongo.db.locations.find_one({"$and": [{"user_id": user_id}, {"location_name": location_name}]})
+    # For testing purposes
+    print(location)
+    location_id = str(location["_id"])
+    #For testing purposes
+    print(location_id)
+
+    return location_id
 
 
 def locations_count():
