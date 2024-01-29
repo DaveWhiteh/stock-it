@@ -234,14 +234,16 @@ def add_item(location_id):
         return redirect(url_for("login"))
     
     user_id = get_user_id()
+    # For testing purposes
+    print(location_id)
 
     if request.method == "POST":
-        if location_id == 'none':
-            location_id = get_location_id(user_id, request.form.get("location_name"))
+        location = mongo.db.locations.find_one({"location_name": {'$eq': request.form.get("location_name")}})
+        new_location_id = str(location["_id"])
         
         item = {
             "user_id": user_id,
-            "location_id": location_id,
+            "location_id": new_location_id,
             "location_name": request.form.get("location_name"),
             "item_name": request.form.get("item_name"),
             "quantity": request.form.get("quantity"),
@@ -250,10 +252,7 @@ def add_item(location_id):
             "expiry_date": request.form.get("expiry_date"),
             "price": request.form.get("price"),
             "note": request.form.get("note")
-        }
-
-        location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
-        location_name = location["location_name"]
+        }   
 
         item_name_exist = mongo.db.items.count_documents({"user_id": user_id, "item_name": {'$eq': request.form.get("item_name")}})
 
@@ -263,7 +262,7 @@ def add_item(location_id):
 
         mongo.db.items.insert_one(item)
         flash("Item Successfully Added")
-        return redirect(url_for("get_items", location_id=location_id))
+        return redirect(url_for("get_items", location_id=new_location_id))
     
     locations = mongo.db.locations.find({"user_id": {'$eq': user_id}}).sort("location_name", 1)
     return render_template("add_item.html", locations=locations, location_id=location_id)
@@ -349,7 +348,7 @@ def get_user_id():
 
 def get_location_id(user_id, location_name):
     #Get the location_id from db
-    location = mongo.db.locations.find_one({"$and": [{"user_id": user_id}, {"location_name": location_name}]})
+    location = mongo.db.locations.find_one({"user_id": user_id, "location_name": {'$eq': location_name}})
     # For testing purposes
     print(location)
     location_id = str(location["_id"])
