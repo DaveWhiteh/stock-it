@@ -187,6 +187,7 @@ def delete_location(location_id):
 @app.route("/delete_location_confirm/<location_id>", methods=["GET", "POST"])
 def delete_location_confirm(location_id):
     if request.method == "POST":
+        user_id = get_user_id()
         if request.form.get("delete_all_items"):
             mongo.db.items.delete_many({"location_id": location_id})
         mongo.db.locations.delete_one({"_id": ObjectId(location_id)})
