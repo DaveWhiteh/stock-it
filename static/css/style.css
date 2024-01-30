@@ -173,7 +173,7 @@ ul.sidenav li a:hover {
     background-image: url('../images/jumbotron.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: 40% center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -418,7 +418,7 @@ a {
 /* Mobile Devices - Landscape */
 @media screen and (min-width: 576px) and (max-width: 991px) and (orientation: landscape) {
     
-
+    
 }
 
 /* Mobile Devices - Portrait */
@@ -440,6 +440,10 @@ a {
 
 /* Tablet / Desktop Devices - Portrait */
 @media screen and (min-width: 768px) {
+    .jumbotron-image {
+        background-position: center center;
+    }
+
     .jumbo-title {
         font-size: 4rem;
     }
