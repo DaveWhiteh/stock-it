@@ -106,6 +106,11 @@ main {
     background-color: #6497BF;  
 }
 
+.btn-red {
+    background-color: #D8031C;
+    color: #FFFFFF;
+}
+
 /* --------------------------------------------------------------------------------------- Icons */
 
 .icon-red {
@@ -316,6 +321,16 @@ a {
 
 /* --------------------------------------------------------------------------------------- Items */
 
+.search-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.search-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .collapsible {
     box-shadow: none;
     border: none;
@@ -418,7 +433,7 @@ a {
 /* Mobile Devices - Landscape */
 @media screen and (min-width: 576px) and (max-width: 991px) and (orientation: landscape) {
     
-    
+
 }
 
 /* Mobile Devices - Portrait */
