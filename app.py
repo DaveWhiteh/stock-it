@@ -272,8 +272,14 @@ def add_item(location_id):
         flash("Item Successfully Added")
         return redirect(url_for("get_items", location_id=new_location_id))
     
+    if location_id != "none":
+        location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
+        location_name = location["location_name"]
+    else:
+        location_name = "none"
+
     locations = mongo.db.locations.find({"user_id": {'$eq': user_id}}).sort("location_name", 1)
-    return render_template("add_item.html", locations=locations, location_id=location_id)
+    return render_template("add_item.html", locations=locations, location_id=location_id, location_name = location_name)
 
 
 @app.route("/edit_item/<location_id>/<item_id>", methods=["GET", "POST"])
