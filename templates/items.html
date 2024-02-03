@@ -92,7 +92,7 @@
                                         <i class="fas fa-caret-right icon-red"></i>
                                     </th>
                                     <td class="left-align no-padding"><span class="text-light-blue text-semibold">{{ item.item_name }}</span></td>
-                                    <td class="right-align no-padding hide-on-small-only"><span class="text-light-blue"><span class="text-medium">Qty: </span>{{ item.quantity }}</span></td>
+                                    <td class="right-align no-padding hide-on-small-only"><span class="text-light-blue"><span class="text-blue text-semibold">Qty: </span>{{ item.quantity }}</span></td>
                                     <th class="table-header" rowspan="2">
                                         <!-- Dropdown Trigger -->
                                         <a class='dropdown-trigger right' href='#' data-target='dropdown-actions-{{ item.item_name }}'>
@@ -107,35 +107,35 @@
                                 </tr>
                                 <tr>
                                     <td class="left-align no-padding"><span class="text-light-blue">{{ item.location_name }}</span></td>
-                                    <td class="right-align no-padding hide-on-small-only"><span class="text-light-blue">{{ item.price }}</span></td>
+                                    <td class="right-align no-padding hide-on-small-only"><span class="text-light-blue"><span class="text-blue text-semibold">Price: </span>{{ item.price }}</span></td>
                                 </tr>
                             </table>
                         </div>
                         <div class="collapsible-body">
                             <table class="body-table">
                                 <tr class="hide-on-med-and-up">
-                                    <th>Qty:</th>
-                                    <td>{{ item.quantity }}</td>
+                                    <th class="text-blue text-semibold">Qty:</th>
+                                    <td class="text-light-blue">{{ item.quantity }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Min Qty:</th>
-                                    <td>{{ item.min_quantity }}</td>
+                                    <th class="text-blue text-semibold">Min Qty:</th>
+                                    <td class="text-light-blue">{{ item.min_quantity }}</td>
                                 </tr>
                                 <tr class="hide-on-med-and-up">
-                                    <th>Price:</th>
-                                    <td>{{ item.price }}</td>
+                                    <th class="text-blue text-semibold">Price:</th>
+                                    <td class="text-light-blue">{{ item.price }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Purchase Date:</th>
-                                    <td>{{ item.purchase_date }}</td>
+                                    <th class="text-blue text-semibold">Purchase Date:</th>
+                                    <td class="text-light-blue">{{ item.purchase_date }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Expiry Date:</th>
-                                    <td>{{ item.expiry_date }}</td>
+                                    <th class="text-blue text-semibold">Expiry Date:</th>
+                                    <td class="text-light-blue">{{ item.expiry_date }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Note:</th>
-                                    <td>{{ item.note }}</td>
+                                    <th class="text-blue text-semibold">Note:</th>
+                                    <td class="text-light-blue">{{ item.note }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -143,7 +143,7 @@
                     {% endfor %}
                 </ul>
                 {% else %}
-                    <h6 class="blue-text text-medium no-margin-top no-margin-bottom center-align">No resultes could be found</h6>
+                    <h6 class="blue-text text-medium no-margin-top no-margin-bottom center-align">No results could be found</h6>
                 {% endif %}
             </div>
         </div>
