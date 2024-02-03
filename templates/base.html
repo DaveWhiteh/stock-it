@@ -72,7 +72,7 @@
             {% if session.user %}
                 <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
                 <li><a href="{{ url_for('get_locations') }}">Locations</a></li>
-                <li><a href="{{ url_for('get_items_all') }}">Items</a></li>
+                <li><a href="{{ url_for('get_items_all') }}">All items</a></li>
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Login</a></li>
