@@ -197,6 +197,8 @@ def delete_location_confirm(location_id):
         user_id = get_user_id()
         if request.form.get("delete_all_items"):
             mongo.db.items.delete_many({"location_id": location_id})
+        else:
+            mongo.db.items.update_many({"user_id": user_id, "location_id": location_id}, {'$set': {"location_id": "", "location_name": ""}})
         mongo.db.locations.delete_one({"_id": ObjectId(location_id)})
 
         if request.form.get("delete_all_items"):
