@@ -76,11 +76,11 @@
                 <!-- cancel / submit -->
                 <div class="row center-align">
                     {% if location_id != 'none' %}
-                        <a href="{{ url_for('get_items', location_id=location_id) }}" class="btn btn--cancel">
+                        <a href="{{ url_for('get_items', location_id=location_id) }}" class="btn btn-red">
                             Cancel
                         </a>
                     {% else %}
-                        <a href="{{ url_for('get_items_all') }}" class="btn btn--cancel">
+                        <a href="{{ url_for('get_items_all') }}" class="btn btn-red">
                             Cancel
                         </a>
                     {% endif %}
