@@ -42,7 +42,7 @@
 <div class="container-wrapper-1">
     <div class="container">
         <div class="row">
-            <div class="col s6 no-padding">
+            <div class="col s12 no-padding">
                 <a href="{{ url_for('dashboard') }}" class="text-blue breadcrumbs">Dashboard</a>
                 {% if request.endpoint == 'get_items' %}
                     <i class="fa-solid fa-angle-right icon-red"></i>
@@ -53,8 +53,7 @@
                     <i class="fa-solid fa-angle-right icon-red"></i>
                     <a href="{{ url_for('get_items_all') }}" class="text-blue breadcrumbs"> All items</a>
                 {% endif %}
-            </div>
-                    
+            </div>   
         </div>
         <div class="row card-panel bg-color-grey search-container">
             <div class="col s12 no-padding right">
@@ -100,8 +99,13 @@
                                         
                                         <!-- Dropdown Structure -->
                                         <ul id='dropdown-actions-{{ item.item_name }}' class='dropdown-content'>
-                                            <li><a href="{{ url_for('edit_item', location_id=item.location_id, item_id=item._id) }}">edit</a></li>
-                                            <li><a href="{{ url_for('delete_item', location_id=item.location_id, item_id=item._id) }}">delete</a></li>
+                                            {% if item.location_id != "" %}
+                                                <li><a href="{{ url_for('edit_item', location_id=item.location_id, item_id=item._id) }}">edit</a></li>
+                                                <li><a href="{{ url_for('delete_item', location_id=item.location_id, item_id=item._id) }}">delete</a></li>
+                                            {% else %}
+                                                <li><a href="{{ url_for('edit_item', location_id='none', item_id=item._id) }}">edit</a></li>
+                                                <li><a href="{{ url_for('delete_item', location_id='none', item_id=item._id) }}">delete</a></li>
+                                            {% endif %}
                                         </ul>
                                     </th>
                                 </tr>
