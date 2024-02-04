@@ -175,7 +175,7 @@ ul.sidenav li a:hover {
 
 .jumbotron-image {
     height: 75vh;
-    background-image: url('../images/jumbotron.webp');
+    background-image: url('../images/jumbotron-mobile.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 40% center;
@@ -456,6 +456,7 @@ a {
 /* Tablet / Desktop Devices - Portrait */
 @media screen and (min-width: 768px) {
     .jumbotron-image {
+        background-image: url('../images/jumbotron.webp');
         background-position: center center;
     }
 
