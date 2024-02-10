@@ -389,6 +389,12 @@ a {
     padding-right: 0;
 }
 
+.mandatory-text {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #6497BF;
+}
+
 /* --------------------------------------------------------------------------------------- Footer */
 
 .footer-media {

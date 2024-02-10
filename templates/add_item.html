@@ -28,7 +28,7 @@
                                 {% endif %}
                             {% endfor %}
                         </select>
-                        <label for="location_name">Location</label>
+                        <label for="location_name">Location*</label>
                     </div>
                 </div>
                 <!-- item name -->
@@ -36,14 +36,14 @@
                     <div class="input-field col s12">
                         <input id="item_name" name="item_name" minlength="3" maxlength="25"
                             type="text" class="validate" required>
-                        <label for="item_name" class="text-light-blue">Name</label>
+                        <label for="item_name" class="text-light-blue">Name*</label>
                     </div>
                 </div>
                 <!-- quantity / min quantity and price -->
                 <div class="row no-margin-bottom">
                     <div class="input-field col s4">
                         <input id="quantity" name="quantity" type="text" class="validate" required>
-                        <label for="quantity" class="text-light-blue">Qty</label>
+                        <label for="quantity" class="text-light-blue">Qty*</label>
                     </div>
                     <div class="input-field col s4">
                         <input id="min_quantity" name="min_quantity" type="text" class="validate">
@@ -61,8 +61,8 @@
                         <label for="purchase_date" class="text-light-blue">Purchase Date</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="expiry_date" name="expiry_date" type="text" class="datepicker">
-                        <label for="expiry_date" class="text-light-blue">Expiry Date</label>
+                        <input id="expiry_date" name="expiry_date" type="text" class="datepicker" required>
+                        <label for="expiry_date" class="text-light-blue">Expiry Date*</label>
                     </div>
                 </div>
                 <!-- note -->
@@ -71,6 +71,12 @@
                         <textarea id="note" name="note" minlength="5"
                             maxlength="200" type="text" class="materialize-textarea validate"></textarea>
                         <label for="note" class="text-light-blue">Note</label>
+                    </div>
+                </div>
+                <!-- mandatory text -->
+                <div class="row">
+                    <div class="col s12">
+                        <span class="mandatory-text">* Mandatory Fields</span>
                     </div>
                 </div>
                 <!-- cancel / submit -->
