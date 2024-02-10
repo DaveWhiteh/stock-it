@@ -283,6 +283,12 @@ li i.fa-location-dot {
     font-size: 125%;
 }
 
+.label-sub-text {
+    font-weight: 200;
+    font-style: italic;
+    font-size: smaller;
+}
+
 .link-text a:hover {
     color: #6497BF;
 }
