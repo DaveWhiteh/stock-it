@@ -110,10 +110,7 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <td class="left-align no-padding"><span class="text-light-blue">{{ item.location_name }}</span></td>
-                                    {% if item.price != "" %}
-                                        <td class="right-align no-padding hide-on-small-only"><span class="text-light-blue"><span class="text-blue text-semibold">Price: </span>{{ item.price }}</span></td>
-                                    {% endif %}
+                                    <td class="left-align no-padding"><span class="text-light-blue">{{ item.location_name }}</span></td>                                    
                                 </tr>
                             </table>
                         </div>
@@ -123,12 +120,10 @@
                                     <th class="text-blue text-semibold">Qty:</th>
                                     <td class="text-light-blue">{{ item.quantity }}</td>
                                 </tr>
-                                {% if item.min_quantity != "" %}
-                                    <tr>
-                                        <th class="text-blue text-semibold">Min Qty:</th>
-                                        <td class="text-light-blue">{{ item.min_quantity }}</td>
-                                    </tr>
-                                {% endif %}
+                                <tr>
+                                    <th class="text-blue text-semibold">Min Qty:</th>
+                                    <td class="text-light-blue">{{ item.min_quantity }}</td>
+                                </tr>
                                 {% if item.price != "" %}
                                     <tr class="hide-on-med-and-up">
                                         <th class="text-blue text-semibold">Price:</th>

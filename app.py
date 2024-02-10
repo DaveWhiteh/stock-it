@@ -230,7 +230,7 @@ def get_items(location_id):
     if "user" not in session:
         flash ("You must be logged in")
         return redirect(url_for("login"))
-
+  
     location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
     location_name = location["location_name"]
     items = list(mongo.db.items.find({"location_id": {'$eq': location_id}}).sort("item_name", 1))
@@ -250,7 +250,7 @@ def add_item(location_id):
     if request.method == "POST":
         location = mongo.db.locations.find_one({"location_name": {'$eq': request.form.get("location_name")}})
         new_location_id = str(location["_id"])
-        
+
         item = {
             "user_id": user_id,
             "location_id": new_location_id,
