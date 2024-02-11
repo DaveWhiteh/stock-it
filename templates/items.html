@@ -3,26 +3,45 @@
 
 <div class="container-wrapper bg-color-red">
     <div class="container">
-        <div class="row no-margin-bottom valign-wrapper">
-            <div class="col s6 title-left">
-                {% if request.endpoint == 'get_items' %}
-                    <h5 class="white-text text-medium no-margin-top no-margin-bottom">{{ location_name }}</h5>
-                {% else %}
-                    <h5 class="white-text text-medium no-margin-top no-margin-bottom">All items</h5>
-                {% endif %}
+        {% if request.endpoint == 'get_items' %}
+        <div class="row no-margin-bottom valign-wrapper hide-on-small-only">
+            <div class="col m9 title-left">            
+                <h5 class="white-text text-medium no-margin-top no-margin-bottom">{{ location_name }}</h5>
+                <p class="white-text">Click on an item to see more details. Edit or delete by clicking on the three dots. Or why not add a new item?</p>
             </div>
-            <div class="col s6 right-align title-right">
-                {% if request.endpoint == 'get_items' %}
+            <div class="col m3 right-align title-right">
                     <a href="{{ url_for('add_item', location_id=location_id) }}" class="btn">Add Item</a>
-                {% else %}
-                    <a href="{{ url_for('add_item', location_id='none') }}" class="btn">Add Item</a>
-                {% endif %}
             </div>
         </div>
+        <div class="row no-margin-bottom valign-wrapper hide-on-med-and-up">
+            <div class="col s12 no-padding">
+                <h5 class="white-text text-medium no-margin-top no-margin-bottom">{{ location_name }}</h5>
+                <p class="white-text">Click on an item to see more details. Edit or delete by clicking on the three dots. Or why not add a new item?</p>
+                <a href="{{ url_for('add_item', location_id=location_id) }}" class="btn">Add Item</a>
+            </div>
+        </div>
+        {% else %}
+        <div class="row no-margin-bottom valign-wrapper hide-on-small-only">
+            <div class="col m9 title-left">
+                <h5 class="white-text text-medium no-margin-top no-margin-bottom">All items</h5>
+                <p class="white-text">Click on an item to see more details. Edit or delete by clicking on the three dots. Or why not add a new item?</p>
+            </div>
+            <div class="col m3 right-align title-right">
+                <a href="{{ url_for('add_item', location_id='none') }}" class="btn">Add Item</a>
+            </div>
+        </div>
+        <div class="row no-margin-bottom valign-wrapper hide-on-med-and-up">
+            <div class="col s12 no-padding">
+                <h5 class="white-text text-medium no-margin-top no-margin-bottom">All items</h5>
+                <p class="white-text">Click on an item to see more details. Edit or delete by clicking on the three dots. Or why not add a new item?</p>
+                <a href="{{ url_for('add_item', location_id='none') }}" class="btn">Add Item</a>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 
-<div class="container-wrapper-1 bg-color-light-blue center-align">
+<div class="container-wrapper-1 bg-color-light-blue center-align shadow">
     <div class="container">
         <div class="row no-margin-bottom">
             <!-- flash messages -->

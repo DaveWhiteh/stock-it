@@ -3,18 +3,26 @@
 
 <div class="container-wrapper bg-color-red">
     <div class="container">
-        <div class="row no-margin-bottom valign-wrapper">
-            <div class="col s6 title-left">
+        <div class="row no-margin-bottom valign-wrapper hide-on-small-only">
+            <div class="col m9 title-left">
                 <h5 class="white-text text-medium no-margin-top no-margin-bottom">Locations</h5>
+                <p class="white-text">Explore your locations. Click on a location to see a list of items. Or click button to add new location.</p>
             </div>
-            <div class="col s6 right-align title-right">
+            <div class="col m3 right-align title-right">
+                <a href="{{ url_for('add_location') }}" class="btn">Add Location</a>
+            </div>
+        </div>
+        <div class="row no-margin-bottom valign-wrapper hide-on-med-and-up">
+            <div class="col s12 no-padding">
+                <h5 class="white-text text-medium no-margin-top no-margin-bottom">Locations</h5>
+                <p class="white-text">Explore your locations. Click on a location to see a list of items. Or click button to add a new location.</p>
                 <a href="{{ url_for('add_location') }}" class="btn">Add Location</a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="container-wrapper-1 bg-color-light-blue center-align">
+<div class="container-wrapper-1 bg-color-light-blue center-align shadow">
     <div class="container">
         <div class="row no-margin-bottom">
             <!-- flash messages -->
