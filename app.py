@@ -4,6 +4,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from datetime import datetime, date
 if os.path.exists("env.py"):
     import env
 
@@ -221,8 +222,10 @@ def get_items_all():
     
     user_id = get_user_id()
 
+    todays_date = datetime.now()
+
     items = list(mongo.db.items.find({"user_id": {'$eq': user_id}}).sort("item_name", 1))
-    return render_template("items.html", items=items)
+    return render_template("items.html", items=items, todays_date=todays_date)
 
 
 @app.route("/get_items/<location_id>")
@@ -231,10 +234,11 @@ def get_items(location_id):
         flash ("You must be logged in")
         return redirect(url_for("login"))
   
+    todays_date = datetime.now()
     location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
     location_name = location["location_name"]
     items = list(mongo.db.items.find({"location_id": {'$eq': location_id}}).sort("item_name", 1))
-    return render_template("items.html", items=items, location_id=location_id, location_name=location_name)
+    return render_template("items.html", items=items, location_id=location_id, location_name=location_name, todays_date=todays_date)
 
 
 @app.route("/add_item/<location_id>", methods=["GET", "POST"])
@@ -251,6 +255,11 @@ def add_item(location_id):
         location = mongo.db.locations.find_one({"location_name": {'$eq': request.form.get("location_name")}})
         new_location_id = str(location["_id"])
 
+        expiry = request.form.get("expiry_date")
+        format = '%Y-%m-%d'
+
+        expirydate = datetime.strptime(expiry, format)
+
         item = {
             "user_id": user_id,
             "location_id": new_location_id,
@@ -259,7 +268,7 @@ def add_item(location_id):
             "quantity": request.form.get("quantity"),
             "min_quantity": request.form.get("min_quantity"),
             "purchase_date": request.form.get("purchase_date"),
-            "expiry_date": request.form.get("expiry_date"),
+            "expiry_date": expirydate,
             "price": request.form.get("price"),
             "note": request.form.get("note")
         }   
@@ -296,6 +305,11 @@ def edit_item(location_id,item_id):
         location = mongo.db.locations.find_one({"location_name": {'$eq': request.form.get("location_name")}})
         new_location_id = str(location["_id"])
 
+        expiry = request.form.get("expiry_date")
+        format = '%Y-%m-%d'
+
+        expirydate = datetime.strptime(expiry, format)
+
         submit = {
             "user_id": user_id,
             "location_id": new_location_id,
@@ -304,7 +318,7 @@ def edit_item(location_id,item_id):
             "quantity": request.form.get("quantity"),
             "min_quantity": request.form.get("min_quantity"),
             "purchase_date": request.form.get("purchase_date"),
-            "expiry_date": request.form.get("expiry_date"),
+            "expiry_date": expirydate,
             "price": request.form.get("price"),
             "note": request.form.get("note")
         }

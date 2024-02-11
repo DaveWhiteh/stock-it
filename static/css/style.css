@@ -395,6 +395,13 @@ a {
     color: #6497BF;
 }
 
+.expired {
+    background-color: #D8031C;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 8px;
+}
+
 /* --------------------------------------------------------------------------------------- Footer */
 
 .footer-media {

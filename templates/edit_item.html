@@ -60,7 +60,7 @@
                         <label for="purchase_date" class="text-light-blue">Purchase Date</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="expiry_date" name="expiry_date" value="{{ item.expiry_date }}" type="text" class="datepicker" required>
+                        <input id="expiry_date" name="expiry_date" value="{{ item.expiry_date.strftime('%Y-%m-%d') }}" type="text" class="datepicker" required>
                         <label for="expiry_date" class="text-light-blue">Expiry Date*</label>
                     </div>
                 </div>

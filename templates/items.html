@@ -91,7 +91,11 @@
                                         <i class="fas fa-caret-right icon-red"></i>
                                     </th>
                                     <td class="left-align no-padding"><span class="text-light-blue text-semibold">{{ item.item_name }}</span></td>
-                                    <td class="right-align no-padding hide-on-small-only"><span class="text-light-blue"><span class="text-blue text-semibold">Qty: </span>{{ item.quantity }}</span></td>
+                                    {% if item.expiry_date <= todays_date %}
+                                        <td class="right-align no-padding hide-on-small-only"><span class="text-light-blue"><span class="text-blue text-semibold">Qty: </span>{{ item.quantity }}</span></td>
+                                    {% else %}
+                                        <td rowspan="2" class="right-align no-padding hide-on-small-only"><span class="text-light-blue"><span class="text-blue text-semibold">Qty: </span>{{ item.quantity }}</span></td>
+                                    {% endif %}
                                     <th class="table-header" rowspan="2">
                                         <!-- Dropdown Trigger -->
                                         <a class='dropdown-trigger right' href='#' data-target='dropdown-actions-{{ item.item_name }}'>
@@ -110,7 +114,10 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <td class="left-align no-padding"><span class="text-light-blue">{{ item.location_name }}</span></td>                                    
+                                    <td class="left-align no-padding"><span class="text-light-blue">{{ item.location_name }}</span></td>
+                                    {% if item.expiry_date <= todays_date %}
+                                        <td class="right-align no-padding"><i class="fa-solid fa-circle-exclamation icon-red tooltipped" data-tooltip="Date Expired"></i></td>
+                                    {% endif %}
                                 </tr>
                             </table>
                         </div>
@@ -138,7 +145,7 @@
                                 {% endif %}
                                 <tr>
                                     <th class="text-blue text-semibold">Expiry Date:</th>
-                                    <td class="text-light-blue">{{ item.expiry_date }}</td>
+                                    <td class="{% if item.expiry_date <= todays_date %} text-red {% else %} text-light-blue {% endif %}">{{ item.expiry_date.strftime('%Y-%m-%d') }}</td>
                                 </tr>
                                 {% if item.note != "" %}
                                     <tr>

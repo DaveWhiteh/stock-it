@@ -5,6 +5,9 @@ $(document).ready(function () {
     $('.dropdown-trigger').dropdown();
     $('.collapsible').collapsible();
     $('select').formSelect();
+    $('.tooltipped').tooltip({
+        position: 'left'
+    });
     $('.datepicker').datepicker({
         format: "yyyy-mm-dd",
         yearRange: 3,
