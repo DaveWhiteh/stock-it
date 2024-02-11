@@ -92,9 +92,9 @@
                                     </th>
                                     <td class="left-align no-padding"><span class="text-light-blue text-semibold">{{ item.item_name }}</span></td>
                                     {% if item.expiry_date <= todays_date %}
-                                        <td class="right-align no-padding hide-on-small-only"><span class="text-light-blue"><span class="text-blue text-semibold">Qty: </span>{{ item.quantity }}</span></td>
+                                        <td class="right-align no-padding"><span class="text-light-blue"><span class="text-blue text-semibold">Qty: </span>{{ item.quantity }}</span></td>
                                     {% else %}
-                                        <td rowspan="2" class="right-align no-padding hide-on-small-only"><span class="text-light-blue"><span class="text-blue text-semibold">Qty: </span>{{ item.quantity }}</span></td>
+                                        <td rowspan="2" class="right-align no-padding"><span class="text-light-blue"><span class="text-blue text-semibold">Qty: </span>{{ item.quantity }}</span></td>
                                     {% endif %}
                                     <th class="table-header" rowspan="2">
                                         <!-- Dropdown Trigger -->
