@@ -356,6 +356,10 @@ a {
     border-collapse: initial;
 }
 
+.header-table tr td {
+    width: 0!important;
+}
+
 .table-header {
     width: 5%;
 }
@@ -525,6 +529,10 @@ a {
         border-bottom: none;
         margin-bottom: 20px;
         border-radius: 8px;
+    }
+
+    .btn-search div {
+        padding-top: 25px;
     }
 
 }
