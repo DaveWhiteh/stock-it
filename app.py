@@ -30,8 +30,9 @@ def home():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
+    todays_date = datetime.now()
     items = list(mongo.db.items.find({"$text": {"$search": query}}))
-    return render_template("items.html", items=items)
+    return render_template("items.html", items=items, todays_date=todays_date)
 
 
 @app.route("/register", methods=["GET", "POST"])

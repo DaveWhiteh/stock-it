@@ -61,41 +61,30 @@
 <div class="container-wrapper-1">
     <div class="container">
         <div class="row">
-            <div class="col s12 no-padding">
+            <div class="col s12 m4 no-padding">
                 <a href="{{ url_for('dashboard') }}" class="text-blue breadcrumbs">Dashboard</a>
                 {% if request.endpoint == 'get_items' %}
-                    <i class="fa-solid fa-angle-right icon-red"></i>
-                    <a href="{{ url_for('get_locations') }}" class="text-blue breadcrumbs"> Locations</a>
-                    <i class="fa-solid fa-angle-right icon-red"></i>
-                    <span class="text-blue"> {{ location_name }}</span>
+                <i class="fa-solid fa-angle-right icon-red"></i>
+                <a href="{{ url_for('get_locations') }}" class="text-blue breadcrumbs"> Locations</a>
+                <i class="fa-solid fa-angle-right icon-red"></i>
+                <span class="text-blue"> {{ location_name }}</span>
                 {% else %}
-                    <i class="fa-solid fa-angle-right icon-red"></i>
-                    <a href="{{ url_for('get_items_all') }}" class="text-blue breadcrumbs"> All items</a>
+                <i class="fa-solid fa-angle-right icon-red"></i>
+                <a href="{{ url_for('get_items_all') }}" class="text-blue breadcrumbs"> All items</a>
                 {% endif %}
-            </div>   
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row card-panel bg-color-grey">
-        <form action="{{ url_for('search') }}" method="POST" class="col s12">
-            <div class="row no-margin-bottom">
-                <div class="input-field col s12 m8">
-                    <i class="fas fa-search prefix icon-blue"></i>
-                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search Items</label>
-                </div>
-                <div class="col s12 m4 center-align btn-search">
-                    <div class="row">
-                        <a href="{{ url_for('get_items_all') }}" class="btn btn-red">Reset</a>
-                        <button type="submit" class="btn">
-                            Search
+            </div>
+            <div class="col s12 m8 search right-align no-padding">
+                <form action="{{ url_for('search') }}" method="POST">
+                    <div class="search-container">
+                        <input id="query" class="search-bar" type="text" name="query" placeholder="Search Items">
+                        <a href="{{ url_for('get_items_all') }}" class="btn btn-red btn-search">Reset</a>
+                        <button class="btn" type="submit">
+                            <i class="fas fa-search prefix"></i>
                         </button>
                     </div>
-                </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 

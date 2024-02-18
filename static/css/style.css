@@ -332,13 +332,39 @@ a {
 /* --------------------------------------------------------------------------------------- Items */
 
 .search-container {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    background-color: #EFEFEF;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 100%;
 }
 
-.search-button {
-    margin-top: 10px;
-    margin-bottom: 10px;
+.search-bar {
+    margin: 0;
+    height: 100%;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+.search-bar::placeholder {
+    color: #6497BF;
+}
+
+.btn-search {
+    margin-right: 10px;
+}
+
+.search-container button {
+    height: 35px;
+    padding: 0 8px;
+}
+
+.search-container button i {
+    display: inline;
+    margin: auto;
+    line-height:35px;
+    color: #FFFFFF;
 }
 
 .collapsible {
@@ -478,6 +504,10 @@ a {
         padding: 0;
     }
 
+    .search {
+        margin-top: 1rem;
+    }
+
 }
 
 /* Tablet / Desktop Devices - Portrait */
@@ -529,10 +559,6 @@ a {
         border-bottom: none;
         margin-bottom: 20px;
         border-radius: 8px;
-    }
-
-    .btn-search div {
-        padding-top: 25px;
     }
 
 }
