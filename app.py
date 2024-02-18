@@ -24,12 +24,24 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
+@app.route("/search_items_all", methods=["GET", "POST"])
+def search_items_all():
     query = request.form.get("query")
     todays_date = datetime.now()
+        
     items = list(mongo.db.items.find({"$text": {"$search": query}}))
     return render_template("items.html", items=items, todays_date=todays_date)
+
+
+@app.route("/search_items/<location_id>", methods=["GET", "POST"])
+def search_items(location_id):
+    query = request.form.get("query")
+    todays_date = datetime.now()
+    location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
+    location_name = location["location_name"]
+
+    items = list(mongo.db.items.find({"$text": {"$search": query}}))
+    return render_template("items.html", items=items, todays_date=todays_date, location_id=location_id, location_name=location_name)
 
 
 @app.route("/register", methods=["GET", "POST"])
