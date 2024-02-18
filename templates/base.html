@@ -47,12 +47,12 @@
                                 class="fas fa-bars icon-red"></i></a>
                         <ul class="right hide-on-med-and-down">                        
                             {% if session.user %}
+                                <li><a href="{{ url_for('home') }}">Home</a></li>
                                 <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
                                 <li><a href="{{ url_for('get_locations') }}">Locations</a></li>
                                 <li><a href="{{ url_for('get_items_all') }}">All items</a></li>
                                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
                             {% else %}
-                                <li><a href="{{ url_for('home') }}">Home</a></li>
                                 <li><a href="{{ url_for('login') }}">Login</a></li>
                                 <li><a href="{{ url_for('register') }}">Register</a></li>
                             {% endif %}
@@ -68,12 +68,12 @@
                 <h4 class="center-align text-blue text-semibold">Stock-<span class="text-red">!</span>t</h4>
             </li>          
             {% if session.user %}
+                <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
                 <li><a href="{{ url_for('get_locations') }}">Locations</a></li>
                 <li><a href="{{ url_for('get_items_all') }}">All items</a></li>
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
             {% else %}
-                <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('login') }}">Login</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
             {% endif %}
