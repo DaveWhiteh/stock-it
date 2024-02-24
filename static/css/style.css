@@ -479,18 +479,6 @@ a {
 
 /* --------------------------------------------------------------------------------------- Media Queries */
 
-/* Small Mobile Devices */
-@media (min-width: 280px) and (max-width: 320px) {
-    
-
-}
-
-/* Mobile Devices - Landscape */
-@media screen and (min-width: 576px) and (max-width: 991px) and (orientation: landscape) {
-    
-
-}
-
 /* Mobile Devices - Portrait */
 @media screen and (max-width: 767px) {
     .container-items {
@@ -562,11 +550,5 @@ a {
         margin-bottom: 20px;
         border-radius: 8px;
     }
-
-}
-
-/* Tablet / Desktop Devices - Portrait and Landscape */
-@media screen and (min-width: 992px) {
-    
 
 }
