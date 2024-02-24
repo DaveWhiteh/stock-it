@@ -1,3 +1,5 @@
+// Materialize CSS Initialisation
+
 $(document).ready(function () {
     $('.sidenav').sidenav({
         edge: "right"
