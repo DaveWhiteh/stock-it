@@ -18,10 +18,22 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+"""
+The home() function displays the home page to
+the user upon visiting the site.
+"""
+
+
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("home.html")
+
+
+"""
+The search functions utilise the search feature
+on the items page.
+"""
 
 
 @app.route("/search_items_all", methods=["GET", "POST"])
@@ -44,6 +56,16 @@ def search_items(location_id):
     return render_template("items.html", items=items, todays_date=todays_date, location_id=location_id, location_name=location_name)
 
 
+"""
+The register() function first checks to see if the user has
+submitted any data via the POST method.
+If they have it will go through checking if user exists and if
+they don't, a new user will be submitted to the db and they will
+be redirected to the dashboard.
+If no data has been submitted the register template will be rendered.
+"""
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -51,6 +73,7 @@ def register():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
+        # if username exists display flash message
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
@@ -61,15 +84,32 @@ def register():
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
+        # insert a new user into the db
         mongo.db.users.insert_one(register)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
+
         flash("Registration Successful!")
+
+        # get the total number of locations from db
         location_count = locations_count()
+        # get the total number of items from db
         item_count = items_count()
         return redirect(url_for("dashboard", location_count=location_count, item_count=item_count))
     return render_template("register.html")
+
+
+"""
+The login() function first checks to see if the user has
+submitted any data via the POST method.
+If they have then they will check if the user exists.
+If the user exists, then the password is then checked and should
+both be valid they will be redirected to the dashbaord.
+If the user or password does not match what is stored in the db,
+a flash message will be displayed.
+If no data has been submitted the login template will be rendered.
+"""
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -101,8 +141,15 @@ def login():
     return render_template("login.html")
 
 
+"""
+The dashboard() function gets the session users details
+from the db and then renders the dashbaord template.
+"""
+
+
 @app.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
+    # check to see if the user is in session
     if "user" not in session:
         flash ("You must be logged in")
         return redirect(url_for("login"))
@@ -115,6 +162,12 @@ def dashboard():
         return render_template("dashboard.html", location_count=location_count, item_count=item_count)
 
 
+"""
+The logout() function removes the user from session
+and redirects them to the login page.
+"""
+
+
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -123,16 +176,34 @@ def logout():
     return redirect(url_for("login"))
 
 
+"""
+The get_locations() function gets a list of the locations
+from the db.
+"""
+
+
 @app.route("/get_locations")
 def get_locations():
     if "user" not in session:
         flash ("You must be logged in")
         return redirect(url_for("login"))
 
+    # get the user id of the user in session
     user_id = get_user_id()
 
+    # get a list of the locations
     locations = list(mongo.db.locations.find({"user_id": {'$eq': user_id}}).sort("location_name", 1))
     return render_template("locations.html", locations=locations)
+
+
+"""
+The add_location() function first checks to see if the user has
+submitted any data via the POST method.
+If they have then it will check to see if the location exists.
+If it does then a flash message will be displayed. If it doesn't then
+the new location will be submitted to the db.
+If no data has been submitted the add_location template will be rendered.
+"""
 
 
 @app.route("/add_location", methods=["GET", "POST"])
@@ -148,17 +219,29 @@ def add_location():
             "location_name": request.form.get("location_name")
         }
 
+        # check to see if the location name exists in the db
         location_name_exist = mongo.db.locations.count_documents({"user_id": user_id, "location_name": {'$eq': request.form.get("location_name")}})
 
         if location_name_exist >= 1:
             flash ("Location already exists")
             return redirect(url_for("add_location"))
 
+        # insert location into the db
         mongo.db.locations.insert_one(location)
         flash("Location Successfully Added")
         return redirect(url_for("get_locations"))
 
     return render_template("add_location.html")
+
+
+"""
+The edit_location() function first checks to see if the user has
+submitted any data via the POST method.
+If they have then it will check to see if the location exists.
+If it does then a flash message will be displayed. If it doesn't then
+the location be replaced to the db.
+If no data has been submitted the edit_location template will be rendered.
+"""
 
 
 @app.route("/edit_location/<location_id>", methods=["GET", "POST"])
@@ -174,12 +257,14 @@ def edit_location(location_id):
             "location_name": request.form.get("location_name")
         }
 
+        # check to see if the location name exists in the db
         location_name_exist = mongo.db.locations.count_documents({"user_id": user_id, "location_name": {'$eq': request.form.get("location_name")}})
 
         if location_name_exist >= 1:
             flash ("Location already exists")
             return redirect(url_for("edit_location", location_id=location_id))
 
+        # replace location in the db
         mongo.db.locations.replace_one({"_id": ObjectId(location_id)}, submit)
         flash("Location Successfully Edited")
         return redirect(url_for("get_locations"))
@@ -188,12 +273,20 @@ def edit_location(location_id):
     return render_template("edit_location.html", location=location)
 
 
+"""
+The delete_location() function checks to see if the location exists.
+If it does then a flash message will be displayed. If location
+exists then the delete_location template will be rendered.
+"""
+
+
 @app.route("/delete_location/<location_id>")
 def delete_location(location_id):
     if "user" not in session:
         flash ("You must be logged in")
         return redirect(url_for("login"))
 
+    # check to see if the location exists in the db
     location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
     if not location:
         flash("Location not found")
@@ -202,14 +295,29 @@ def delete_location(location_id):
     return render_template("delete_location.html", location=location)
 
 
+"""
+The delete_location_confirm() function first checks to see if the user has
+submitted any data via the POST method.
+If they have then it will check to see if the user wants to delete
+all the items as well as the location and then display a flash message
+based on the actions taken.
+"""
+
+
 @app.route("/delete_location_confirm/<location_id>", methods=["GET", "POST"])
 def delete_location_confirm(location_id):
     if request.method == "POST":
+        # get the user id from the db
         user_id = get_user_id()
+
+        # check to see if the user wants to delete all the items within the location
         if request.form.get("delete_all_items"):
+            # delete all items
             mongo.db.items.delete_many({"location_id": location_id})
         else:
+            # update the items making the location id and name fields empty
             mongo.db.items.update_many({"user_id": user_id, "location_id": location_id}, {'$set': {"location_id": "", "location_name": ""}})
+        # delete location
         mongo.db.locations.delete_one({"_id": ObjectId(location_id)})
 
         if request.form.get("delete_all_items"):
@@ -224,18 +332,33 @@ def delete_location_confirm(location_id):
         return redirect(url_for("get_locations"))
 
 
+"""
+The get_items_all function will return all the items assigned to
+the user in session.
+"""
+
+
 @app.route("/get_items_all")
 def get_items_all():
     if "user" not in session:
         flash ("You must be logged in")
         return redirect(url_for("login"))
     
+    # get user id of the user in session
     user_id = get_user_id()
 
+    # get todays date
     todays_date = datetime.now()
 
+    # get a list of all the items from the db
     items = list(mongo.db.items.find({"user_id": {'$eq': user_id}}).sort("item_name", 1))
     return render_template("items.html", items=items, todays_date=todays_date)
+
+
+"""
+The get_items function will return all the items
+that are within a specific location.
+"""
 
 
 @app.route("/get_items/<location_id>")
@@ -243,10 +366,15 @@ def get_items(location_id):
     if "user" not in session:
         flash ("You must be logged in")
         return redirect(url_for("login"))
-  
+    
+    # get todays date
     todays_date = datetime.now()
+
+    # get location name from the db
     location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
     location_name = location["location_name"]
+
+    # get a list of the items that reside in a particular location from the db
     items = list(mongo.db.items.find({"location_id": {'$eq': location_id}}).sort("item_name", 1))
     return render_template("items.html", items=items, location_id=location_id, location_name=location_name, todays_date=todays_date)
 
