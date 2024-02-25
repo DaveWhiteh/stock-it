@@ -108,3 +108,314 @@ The images within the home page were chosen specifically for there relation to t
 **Icons**
 
 The icons within the site can be found at [Font Awesome](https://fontawesome.com/). The main icons within the site are the social media links that can be found on each page in the footer. These give the opportunity for the user to go straight to these social media sites to find out the most recent info regarding the business and the web application. The other icon is the arrow that is used within the items collapsible list.
+
+## Features
+
+### **Navigation Bar**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-navbar-desktop.jpg" width="1000">
+
+**Desktop - In Session**
+
+<img src="static/images/readme/features-navbar-insession-desktop.jpg" width="1000">
+
+**Mobile**
+
+<img src="static/images/readme/features-navbar-mobile.jpg" width="350">
+
+**Mobile - Sidemenu**
+
+<img src="static/images/readme/features-navbar-sidemenu-mobile.jpg" width="350">
+</details>
+
++ Featuring the brand logo to the left which links directly to the home page.
+
++ The links to the right hand side appear, depending on whether the user is also in session or not. They are hoverable so that when the user is on that link it highlights in grey.
+
++ The navbar is fixed in order for the user to always gain access to the menu at any point throughout the user navigating the site.
+
++ On mobile the links will be hidden and instead will be shown once the user clicks on the hamburger symbol and the sidemenu on the right appears.
+
+### **Footer**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-footer-desktop.jpg" width="1000">
+
+**Mobile**
+
+<img src="static/images/readme/features-footer-mobile.jpg" width="350">
+</details>
+
++ Features the brand logo to the left with a strapline below which simplifies what the web application is about.
+
++ To the right of the footer there are the social media links facebook, X and instagram which once clicked will open in a new window
+
++ At the centre bottom there is the copyright text.
+
++ On mobile the footer layout changes, with the elements becoming centralised.
+
+### **Home Page**
+
+This page essentially has been created to advertise and showcase what the web application has to offer, giving the new user the incentive to register for a free account.
+
+#### Jumbotron
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-jumbotron-desktop.jpg" width="1000">
+</details>
+
++ The jumbotron is what the user will initially see when they go to the site for the first time. It utilises a full width image that represents how stock-!t can be used and using the branding colours really stands out to the new user.
+
++ There is the company name big and bold and two straplines that are short and simple that really sums up the application for the new user. These straplines are followed by a button that will take the user to the registration page.
+
+#### Inventory Management
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-management-desktop.jpg" width="1000">
+</details>
+
++ In keeping with idea that the home page is for advertising the app, this section shows off the app by giving the user a preview as to the look of the layout from a mobile perspective.
+
++ On the left side there is a simple big, bold header with three effective straplines below. These straplines have icons before that sum up each strapline.
+
++ On mobile the image falls below the text and is central, with the text remaining left aligned.
+
+#### Caption
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-caption-desktop.jpg" width="1000">
+</details>
+
++ This section has a caption that is again not bulky in terms of content but describes perfectly what stock-!t could be used for.
+
+#### Double Pictures
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-double-pictures-desktop.jpg" width="1000">
+</details>
+
++ The two pictures following the caption allow the new user to visualise the app being used for the respective reasons that were given in the caption before it. These two images are full width, really making them stand out.
+
+#### Devices
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-devices-desktop.jpg" width="1000">
+</details>
+
++ This section is in keeping with the first in terms of layout. With an image to the right that again allows the new user to visually see what the web app will look on respective devices.
+
++ The header to the left tells the user the types of devices and then the paragraph below explains how they are on multiple devices.
+
++ Below the paragraph, again making sure that the layout is consistent through the build, is a button, this time linking to the login page.
+
++ On mobile the image falls below the text and is central, with the text remaining left aligned.
+
+#### Single Picture
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-single-picture-desktop.jpg" width="1000">
+</details>
+
++ This last section is a single full width image, that essentially sums up how stock-!t could be used in one of the environments mentioned within the home page.
+
+### **Registeration Page**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-register-desktop.jpg" width="1000">
+</details>
+
++ The registration page features the text that clearly allows the user to identify that this is the actual register page.
+
++ The page has a form that allows the user to register. The form consists of a user inputting there first name, last name, username and password. This is followed by a button that allows the user to register.
+
++ Below the form is text that links the user to the login form, should they have accidentally navigated to the wrong page.
+
+### **Login Page**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-login-desktop.jpg" width="1000">
+</details>
+
++ The login page features the text that clearly allows the user to identify that this is the actual login page.
+
++ The page has a form that allows the user to login. The form consists of a user inputting there username and password. This is followed by a button that allows the user to login.
+
++ Below the form is text that links the user to the registration form, should they have accidentally navigated to the wrong page.
+
+### **Dashboard**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-dashboard-desktop.jpg" width="1000">
+</details>
+
++ The user is firstly presented with a centralised header which tells the user they are in the dashboard page.
+
++ The light-blue band below is where the user will see flash messages. The message they will see when they login will be personalised to that user, showing "Welcome, {username}".
++ The dashboard contains two card panels, one for locations and one for all items. Both panels show the total of each group. They are also clickable, allowing the user to go straight to that particular page.
+
+### **Locations**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-locations-desktop.jpg" width="1000">
+</details>
+
++ Below the header in a red block shows the head "Locations" on the left side. On the right contains a button that when clicked takes the user to the add location page.
+
++ The light-blue block is where the user will see the flash messages.
+
++ Below the light-blue section contains the breadcrumbs. These offer the user a great way to navigate from dashboard through to items and back.
+
++ The locations are shown below the breadcrumbs. To the left of each section block, there is the location name. The section name is clickable, where the user is taken to the items page, where the items shown are all part of that particular location only.
+
++ To the right of the location block are three vertical dots. These dots once clicked give the user a dropdown that allows them to either edit or delete a location.
+
+### **Add / Edit Location**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-locations-add-desktop.jpg" width="1000">
+
+<img src="static/images/readme/features-locations-edit-desktop.jpg" width="1000">
+</details>
+
++ When adding / editing a location the user will have a form to fill in. Only the location name is required or can be edited.
+
++ In the form below the Name input field they have two buttons. One that will cancel, which will take them back to the main locations page. The add location button will do exactly that, add the new location and the user will be taken straight back to the location main page.
+
+### **Delete Location**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-locations-delete-desktop.jpg" width="1000">
+</details>
+
++ When a user deletes a location they will also be taken to a new page, where within a form they will need to confirm whether they would like to actually delete the location in question. As a cool feature they will also be given the option to delete all the items that are assigned to that location.
+
++ Two buttons will reside below these options. Cancel button will take them back to the main location page. The delete button will also take them back to the location page, however the form will be submitted and that location will no longer be in the list of locations available.
+
+### **Items / All Items**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-items-desktop.jpg" width="1000">
+
+**Desktop - Collapsible**
+
+<img src="static/images/readme/features-items-collapsible-desktop.jpg" width="1000">
+
+**Mobile**
+
+<img src="static/images/readme/features-items-mobile.jpg" width="350">
+</details>
+
++ The items page can be navigated to in two ways. If you go through the locations, only the items assigned to that location will be listed, whereas if you go to all items through the dashboard or the link in the header, these will show all the items for all locations in alphabetical order by item name.
+
++ The page will have a similar layout to the locations with a red block after the header section, this will contain on the left a header and then on the right a button for adding a new item.
+
++ The light-blue block will be below which will contain the flash messages.
+
++ The search bar will come after the flash messages. This will give user the added bonus of being able to search for items based on there name and the notes field. Should not items exist from the search or not items at all exist within the location then the text "No results could be found" will appear below the bar.
+
++ The items list has been made up using materializes collapsibles. Each item consists of a carat icon that rotates upon the item being collapsed. Within the collapsible is a table structure that contains the rest of the item fields.
+
+**For desktop:** 
+Min Qty, 
+Purchase Date, 
+Expiry Date, 
+Note
+
+**For mobile:**
+Qty, 
+Min Qty, 
+Price, 
+Purchase Date, 
+Expiry Date, 
+Note
+
++ To the right of each item there is the qty and if applicable a warning icon that states the date has been expired.
+
++ Just like the location the items also has a vertical three dots dropdown, that allows the user to both edit and delete individual items.
+
++ On mobile the layout for the items slightly changes. The items list will be full width and due to the available space on a mobile being less, there is no gap between each item. Also due to space, the quantity has been removed and is now showable in the collapsible section.
+
+### **Delete Item**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-items-delete-desktop.jpg" width="1000">
+</details>
+
++ Deleting an item took them to a page, which also had a submit form for confirming the deletion of that particular item.
+
+### **Logout**
+
+<details>
+<summary>Screenshots</summary>
+
+**Desktop**
+
+<img src="static/images/readme/features-logout-desktop.jpg" width="1000">
+</details>
+
++ When the user wants to log out, they will need to click the link in the header. This will then remove the users session and take them to the login page. The user will then be redirected to the login page where a flash message at the bottom of the form will state "You have been logged out"
