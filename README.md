@@ -471,3 +471,69 @@ Note
 </details>
 
 + The actual database was then created using MongoDB.
+
+---
+
+## Technologies Used
+
+### **Languages**
+
++ [HTML5](https://en.wikipedia.org/wiki/HTML5)
++ [CSS3](https://en.wikipedia.org/wiki/CSS)
++ [Javascript](https://en.wikipedia.org/wiki/JavaScript)
++ [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+### **Frameworks & Libraries**
+
++ [MongoDB](https://www.mongodb.com/)
+    + used to create the non-relational database for the project.
++ [Heroku](https://heroku.com/)
+    + used to deploy the full project.
++ [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+    + used to add logic to the html templates alongside python.
++ [jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+    + used to add logic to the html templates alongside python.
++ [jQuery](https://jquery.com/)
+    + used to add functionality to some of the Materialize CSS Components.
++ [Materialize](https://materializecss.com/)
+    + used to create the structure and layout of the website, making it responsive on all devices.
++ [Google Fonts](https://fonts.google.com/)
+    + used to get the links to the fonts that are put in the head of the html pages. These fonts are then used throughout the web application.
++ [Font Awesome](https://fontawesome.com/)
+    + this was used to add icons to the project.
++ [Git](https://git-scm.com/)
+    + was used for version control in order to add, commit and push from GitPod to GitHub.
++ [GitHub](https://github.com/)
+    + is used as a repository and to host the full project.
++ [GitPod](https://www.gitpod.io/)
+    + is the IDE that is used to develop the web application.
+
+### **Programs**
+
++ [Adobe Photoshop](https://www.adobe.com/uk/products/photoshop.html)
+    + is used to alter and resize all the images that are used within the project.
+
+### **Websites**
+
++ [Vecteezy](https://www.vecteezy.com/)
+    + this site was used to source the images used within the web application.
++ [Free Pik](https://www.freepik.com)
+    + this site was used to source the images used within the web application.
++ [Convertio](https://convertio.co/)
+    + this site was used to convert the images from png to webp.
++ [Figma](https://www.figma.com/)
+    + used to create the wireframes and design layout for the project.
++ [Favicon](https://favicon.io/)
+    + used to create the favicon for the web application.
++ [Am I Responsive?](https://ui.dev/amiresponsive)
+    + used to create the responsive mock-up image that is at the beginning of the readme file.
++ [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+    + this was used throughout the whole project, from creating the site, testing the responsiveness of the site and then testing the performance.
++ [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+    + this site is used to validate the css which was used to style the web application.
++ [W3C HTML Validation Service](https://validator.w3.org/)
+    + used to validate the html for the project.
++ [jsHint](https://jshint.com/)
+    + used to validate the javascript for the project.
++ [Stack Overflow](https://stackoverflow.com/)
+    + was used for seeking out answers and general learning purposes.
