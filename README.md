@@ -434,3 +434,40 @@ Note
 
 ---
 
+## Database Design and Creation
+
+### **Data Model**
+
+<details>
+<summary>Screenshots</summary>
+
+**Data Model**
+
+<img src="static/images/readme/database_stockit_data-model.png" width="1000">
+</details>
+
++ Before creating the database a data model was created to help with the design.
+
+### **Database**
+
+<details>
+<summary>Screenshots</summary>
+
+**Overview**
+
+<img src="static/images/readme/database_stockit.jpg" width="1000">
+
+**Users**
+
+<img src="static/images/readme/database_stockit_users.jpg" width="1000">
+
+**Locations**
+
+<img src="static/images/readme/database_stockit_locations.jpg" width="1000">
+
+**Items**
+
+<img src="static/images/readme/database_stockit_items.jpg" width="1000">
+</details>
+
++ The actual database was then created using MongoDB.
