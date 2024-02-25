@@ -275,7 +275,7 @@ def edit_location(location_id):
 
 """
 The delete_location() function checks to see if the location exists.
-If it does then a flash message will be displayed. If location
+If it doesn't then a flash message will be displayed. If location
 exists then the delete_location template will be rendered.
 """
 
@@ -320,6 +320,7 @@ def delete_location_confirm(location_id):
         # delete location
         mongo.db.locations.delete_one({"_id": ObjectId(location_id)})
 
+        # determine which flash message to show
         if request.form.get("delete_all_items"):
             flash("Location and Items Successfully Deleted")
             return redirect(url_for("get_locations"))
@@ -379,23 +380,34 @@ def get_items(location_id):
     return render_template("items.html", items=items, location_id=location_id, location_name=location_name, todays_date=todays_date)
 
 
+"""
+The add_item() function first checks to see if the user has
+submitted any data via the POST method.
+It will check to see if the item already exists and if it doesn't
+will insert the new item into the db.
+"""
+
+
 @app.route("/add_item/<location_id>", methods=["GET", "POST"])
 def add_item(location_id):
     if "user" not in session:
         flash ("You must be logged in")
         return redirect(url_for("login"))
     
+    # get user id from he db
     user_id = get_user_id()
+
     # For testing purposes
-    print(location_id)
+    # print(location_id)
 
     if request.method == "POST":
+        # get the location id from the db
         location = mongo.db.locations.find_one({"location_name": {'$eq': request.form.get("location_name")}})
         new_location_id = str(location["_id"])
 
+        # convert the expiry date from string to datetime format
         expiry = request.form.get("expiry_date")
         format = '%Y-%m-%d'
-
         expirydate = datetime.strptime(expiry, format)
 
         item = {
@@ -411,16 +423,18 @@ def add_item(location_id):
             "note": request.form.get("note")
         }   
 
+        # check to see if the item already exists
         item_name_exist = mongo.db.items.count_documents({"user_id": user_id, "item_name": {'$eq': request.form.get("item_name")}})
-
         if item_name_exist >= 1:
             flash ("Item already exists")
             return redirect(url_for("add_item", location_id=location_id))
 
+        # insert new item into the db
         mongo.db.items.insert_one(item)
         flash("Item Successfully Added")
         return redirect(url_for("get_items", location_id=new_location_id))
     
+    # check to see if location exists
     if location_id != "none":
         location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
         location_name = location["location_name"]
@@ -431,21 +445,31 @@ def add_item(location_id):
     return render_template("add_item.html", locations=locations, location_id=location_id, location_name = location_name)
 
 
+"""
+The edit_item() function first checks to see if the user has
+submitted any data via the POST method.
+It will check to see if the item already exists and if it doesn't
+will update the item in the db.
+"""
+
+
 @app.route("/edit_item/<location_id>/<item_id>", methods=["GET", "POST"])
 def edit_item(location_id,item_id):
     if "user" not in session:
         flash ("You must be logged in")
         return redirect(url_for("login"))
     
+    # get user id from he db
     user_id = get_user_id()
 
     if request.method == "POST":
+        # get the location id from the db
         location = mongo.db.locations.find_one({"location_name": {'$eq': request.form.get("location_name")}})
         new_location_id = str(location["_id"])
 
+        # convert the expiry date from string to datetime format
         expiry = request.form.get("expiry_date")
         format = '%Y-%m-%d'
-
         expirydate = datetime.strptime(expiry, format)
 
         submit = {
@@ -461,9 +485,9 @@ def edit_item(location_id,item_id):
             "note": request.form.get("note")
         }
 
+        # check to see if the item already exists
         item = mongo.db.items.find_one({"user_id": user_id, "item_name": {'$eq': request.form.get("item_name")}})
-        item_id_check = str(item["_id"])
-        
+        item_id_check = str(item["_id"])        
         if item_id == item_id_check:
             mongo.db.items.replace_one({"_id": ObjectId(item_id)}, submit)
             flash("Item Successfully Edited")
@@ -477,12 +501,20 @@ def edit_item(location_id,item_id):
     return render_template("edit_item.html", location_id=location_id, locations=locations, item=item)
 
 
+"""
+The delete_item() function checks to see if the item exists.
+If it doesn't then a flash message will be displayed. If item
+exists then the delete_item template will be rendered.
+"""
+
+
 @app.route("/delete_item/<location_id>/<item_id>")
 def delete_item(location_id,item_id):
     if "user" not in session:
         flash ("You must be logged in")
         return redirect(url_for("login"))
 
+    # check to see if the item exists in the db
     item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
     if not item:
         flash("Item not found")
@@ -491,9 +523,17 @@ def delete_item(location_id,item_id):
     return render_template("delete_item.html", location_id=location_id, item=item)
 
 
+"""
+The delete_item_confirm() function first checks to see if the user has
+submitted any data via the POST method.
+If they have then it will delete the item from the db.
+"""
+
+
 @app.route("/delete_item_confirm/<location_id>/<item_id>", methods=["GET", "POST"])
 def delete_item_confirm(location_id,item_id):
     if request.method == "POST":
+        # delete item from the db
         mongo.db.items.delete_one({"_id": ObjectId(item_id)})
         flash("Item Successfully Deleted")
         return redirect(url_for("get_items", location_id=location_id))
@@ -502,28 +542,48 @@ def delete_item_confirm(location_id,item_id):
         return redirect(url_for("get_items", location_id=location_id))
 
 
+"""
+The get_user_id() gets the user id from the db
+based on the user in session.
+"""
+
+
 def get_user_id():
     # Get the current user_id from db
     user = mongo.db.users.find_one({"username": session["user"]})
     # For testing purposes
-    print(user)
+    # print(user)
+
     user_id = str(user["_id"])
     #For testing purposes
-    print(user_id)
+    # print(user_id)
 
     return user_id
+
+
+"""
+The get_location_id() gets the location id from the db
+based on the user in session and the location name.
+"""
 
 
 def get_location_id(user_id, location_name):
     #Get the location_id from db
     location = mongo.db.locations.find_one({"user_id": user_id, "location_name": {'$eq': location_name}})
     # For testing purposes
-    print(location)
+    # print(location)
+
     location_id = str(location["_id"])
     #For testing purposes
-    print(location_id)
+    # print(location_id)
 
     return location_id
+
+
+"""
+The locations_count() gets a total count of the locations
+based on that user in session.
+"""
 
 
 def locations_count():
@@ -533,9 +593,15 @@ def locations_count():
     # Get the count of the locations from db
     count = mongo.db.locations.count_documents({"user_id": user_id})
     # For testing purposes
-    print(count)
+    # print(count)
 
     return count
+
+
+"""
+The items_count() gets a total count of the items
+based on that user in session.
+"""
 
 
 def items_count():
@@ -545,7 +611,7 @@ def items_count():
     # Get the count of the locations from db
     count = mongo.db.items.count_documents({"user_id": user_id})
     # For testing purposes
-    print(count)
+    # print(count)
 
     return count
 
