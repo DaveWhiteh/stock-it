@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}    
 
+<!-- location - title -->
 <div class="container-wrapper bg-color-red">
     <div class="container">
+        <!-- tablets and desktop -->
         <div class="row no-margin-bottom valign-wrapper hide-on-small-only">
             <div class="col m9 title-left">
                 <h5 class="white-text text-medium no-margin-top no-margin-bottom">Locations</h5>
@@ -12,6 +14,7 @@
                 <a href="{{ url_for('add_location') }}" class="btn">Add Location</a>
             </div>
         </div>
+        <!-- location - mobiles -->
         <div class="row no-margin-bottom valign-wrapper hide-on-med-and-up">
             <div class="col s12 no-padding">
                 <h5 class="white-text text-medium no-margin-top no-margin-bottom">Locations</h5>
@@ -39,6 +42,7 @@
     </div>
 </div>
 
+<!-- location - breadcrumbs -->
 <div class="container-wrapper-1">
     <div class="container">
         <div class="row no-margin-bottom">
@@ -51,6 +55,7 @@
     </div>
 </div>
 
+<!-- location - list -->
 <div class="container container-wrapper">
     {% for location in locations %}
     <div class="row locations valign-wrapper">       

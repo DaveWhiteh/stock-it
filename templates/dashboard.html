@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}    
 
+<!-- dashboard - title -->
 <div class="container-wrapper bg-color-red center-align">
     <div class="container">
         <div class="row no-margin-bottom">
@@ -31,6 +32,7 @@
 
 <div class="container container-wrapper">
     <div class="row center-align">
+        <!-- location total count -->
         <div class="col s12 m4 offset-m2">
             <a href="{{ url_for('get_locations') }}">
                 <div class="card-panel"> 
@@ -39,6 +41,7 @@
                 </div>
             </a>
         </div>
+        <!-- item total count -->
         <div class="col s12 m4">
             <a href="{{ url_for('get_items_all') }}">
                 <div class="card-panel">

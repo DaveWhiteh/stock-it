@@ -3,7 +3,9 @@
 
 <div class="container-wrapper bg-color-red">
     <div class="container">
+        <!-- items - location -->
         {% if request.endpoint == 'get_items' or request.endpoint == 'search_items' %}
+        <!-- display on tablets and desktop -->
         <div class="row no-margin-bottom valign-wrapper hide-on-small-only">
             <div class="col m9 title-left">            
                 <h5 class="white-text text-medium no-margin-top no-margin-bottom">{{ location_name }}</h5>
@@ -13,6 +15,7 @@
                     <a href="{{ url_for('add_item', location_id=location_id) }}" class="btn">Add Item</a>
             </div>
         </div>
+        <!-- display on mobiles only -->
         <div class="row no-margin-bottom valign-wrapper hide-on-med-and-up">
             <div class="col s12 no-padding">
                 <h5 class="white-text text-medium no-margin-top no-margin-bottom">{{ location_name }}</h5>
@@ -20,7 +23,9 @@
                 <a href="{{ url_for('add_item', location_id=location_id) }}" class="btn">Add Item</a>
             </div>
         </div>
-        {% else %}
+        <!-- items - all -->
+        {% else %}       
+        <!-- display on tablets and desktop -->
         <div class="row no-margin-bottom valign-wrapper hide-on-small-only">
             <div class="col m9 title-left">
                 <h5 class="white-text text-medium no-margin-top no-margin-bottom">All items</h5>
@@ -30,6 +35,7 @@
                 <a href="{{ url_for('add_item', location_id='none') }}" class="btn">Add Item</a>
             </div>
         </div>
+        <!-- display on mobiles only -->
         <div class="row no-margin-bottom valign-wrapper hide-on-med-and-up">
             <div class="col s12 no-padding">
                 <h5 class="white-text text-medium no-margin-top no-margin-bottom">All items</h5>
@@ -58,22 +64,28 @@
     </div>
 </div>
 
+<!-- breadcrumbs -->
 <div class="container-wrapper-1">
     <div class="container">
         <div class="row">
             <div class="col s12 m4 no-padding">
+                <!-- dashboard -->
                 <a href="{{ url_for('dashboard') }}" class="text-blue breadcrumbs">Dashboard</a>
+                <!-- location -->
                 {% if request.endpoint == 'get_items' or request.endpoint == 'search_items' %}
                     <i class="fa-solid fa-angle-right icon-red"></i>
                     <a href="{{ url_for('get_locations') }}" class="text-blue breadcrumbs"> Locations</a>
                     <i class="fa-solid fa-angle-right icon-red"></i>
                     <span class="text-blue"> {{ location_name }}</span>
+                <!-- item -->
                 {% else %}
                     <i class="fa-solid fa-angle-right icon-red"></i>
                     <a href="{{ url_for('get_items_all') }}" class="text-blue breadcrumbs"> All items</a>
                 {% endif %}
             </div>
+            <!-- searchbar -->
             <div class="col s12 m8 search right-align no-padding">
+                <!-- items - location -->
                 {% if request.endpoint == 'get_items' or request.endpoint == 'search_items' %}
                     <form action="{{ url_for('search_items', location_id=location_id) }}" method="POST">
                         <div class="search-container">
@@ -84,6 +96,7 @@
                             </button>
                         </div>
                     </form>
+                <!-- items - all -->
                 {% else %}
                     <form action="{{ url_for('search_items_all') }}" method="POST">
                         <div class="search-container">
@@ -100,6 +113,7 @@
     </div>
 </div>
 
+<!-- items - list -->
 <div class="container-wrapper">
     <div class="container container-items">
         <div class="row valign-wrapper">
@@ -148,30 +162,36 @@
                         </div>
                         <div class="collapsible-body">
                             <table class="body-table">
+                                <!-- item - quantity -->
                                 <tr class="hide-on-med-and-up">
                                     <th class="text-blue text-semibold">Qty:</th>
                                     <td class="text-light-blue">{{ item.quantity }}</td>
                                 </tr>
+                                <!-- item - min quantity -->
                                 <tr>
                                     <th class="text-blue text-semibold">Min Qty:</th>
                                     <td class="text-light-blue">{{ item.min_quantity }}</td>
                                 </tr>
+                                <!-- item - price -->
                                 {% if item.price != "" %}
                                     <tr>
                                         <th class="text-blue text-semibold">Price:</th>
                                         <td class="text-light-blue">{{ item.price }}</td>
                                     </tr>
                                 {% endif %}
+                                <!-- item - purchase date -->
                                 {% if item.purchase_date != "" %}
                                     <tr>
                                         <th class="text-blue text-semibold">Purchase Date:</th>
                                         <td class="text-light-blue">{{ item.purchase_date }}</td>
                                     </tr>
                                 {% endif %}
+                                <!-- item - expiry date -->
                                 <tr>
                                     <th class="text-blue text-semibold">Expiry Date:</th>
                                     <td class="{% if item.expiry_date <= todays_date %} text-red {% else %} text-light-blue {% endif %}">{{ item.expiry_date.strftime('%Y-%m-%d') }}</td>
                                 </tr>
+                                <!-- item - note -->
                                 {% if item.note != "" %}
                                     <tr>
                                         <th class="text-blue text-semibold">Note:</th>

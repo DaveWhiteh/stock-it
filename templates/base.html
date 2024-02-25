@@ -80,6 +80,7 @@
         </ul>
     </header>
 
+    <!-- main block -->
     <main class="{% if (request.endpoint == 'login' or request.endpoint == 'register') %}
                     bg-color-red
                 {% elif request.endpoint == 'dashboard' %}
@@ -93,6 +94,7 @@
     </main>
 
     <footer class="page-footer bg-color-white">
+        <!-- footer - tablets and desktop -->
         <div class="container hide-on-small-only">
             <div class="row valign-wrapper no-margin-bottom">
                 <div class="col m8">
@@ -116,6 +118,7 @@
                 </div>
             </div>
         </div>
+        <!-- footer - mobiles -->
         <div class="container hide-on-med-and-up">
             <div class="row">
                 <div class="col s12 center-align">
@@ -141,6 +144,7 @@
                 </div>
             </div>
         </div>
+        <!-- footer - copyright -->
         <div class="footer-copyright no-padding">
             <div class="container center-align">
                 <p class="text-blue text-medium footer-text">© 2024 Stock-!t. All rights reserved.</p>
@@ -148,9 +152,12 @@
         </div>
     </footer>
 
+    <!-- jQuery script -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- materialize script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- custom script -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
