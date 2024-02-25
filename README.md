@@ -109,6 +109,8 @@ The images within the home page were chosen specifically for there relation to t
 
 The icons within the site can be found at [Font Awesome](https://fontawesome.com/). The main icons within the site are the social media links that can be found on each page in the footer. These give the opportunity for the user to go straight to these social media sites to find out the most recent info regarding the business and the web application. The other icon is the arrow that is used within the items collapsible list.
 
+---
+
 ## Features
 
 ### **Navigation Bar**
@@ -418,4 +420,17 @@ Note
 <img src="static/images/readme/features-logout-desktop.jpg" width="1000">
 </details>
 
-+ When the user wants to log out, they will need to click the link in the header. This will then remove the users session and take them to the login page. The user will then be redirected to the login page where a flash message at the bottom of the form will state "You have been logged out"
++ When the user wants to log out, they will need to click the link in the header. This will then remove the users session and take them to the login page. The user will then be redirected to the login page where a flash message at the bottom of the form will state "You have been logged out".
+
+---
+
+## Future Features
+
++ To include filtering within the items page.
+
++ To have users be able to add tags for both locations and items for enhanced filtering.
+
++ To include a settings page that will allow the user to change certain units for pricing and the like.
+
+---
+
