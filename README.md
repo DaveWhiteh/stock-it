@@ -432,6 +432,10 @@ Note
 
 + To include a settings page that will allow the user to change certain units for pricing and the like.
 
++ Add barcode scanning, so that the user can easily add items without the need to type all the details. This would work by the use of a UPC Lookup API.
+
++ Add dashboard and reporting capabilities.
+
 ---
 
 ## Database Design and Creation
