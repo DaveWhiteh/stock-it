@@ -500,6 +500,23 @@ a {
 
 }
 
+/* Mobile Devices - Landscape */
+@media screen and (min-width: 576px) and (max-width: 991px) and (orientation: landscape) {
+    .jumbo-title {
+        font-size: 2.5rem;
+    }
+    
+    .jumbo-subtitle {
+        margin-bottom: 40px;
+        font-size: 110%;
+    }
+    
+    .jumbo-text {  
+        font-size: 90%;
+    }
+
+}
+
 /* Tablet / Desktop Devices - Portrait */
 @media screen and (min-width: 768px) {
     .jumbotron-image {
