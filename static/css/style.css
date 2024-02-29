@@ -524,19 +524,6 @@ a {
         background-position: center center;
     }
 
-    .jumbo-title {
-        font-size: 4rem;
-    }
-
-    .jumbo-subtitle {      
-        font-size: 200%;
-    }
-
-    .jumbo-text {
-        font-size: 140%;
-        max-width: 60%;
-    }
-
     .home-content {
         display: flex;
         align-items: center;
@@ -566,6 +553,23 @@ a {
         border-bottom: none;
         margin-bottom: 20px;
         border-radius: 8px;
+    }
+
+}
+
+/* Tablet / Desktop Devices - Portrait */
+@media screen and (min-width: 992px) {
+    .jumbo-title {
+        font-size: 4rem;
+    }
+
+    .jumbo-subtitle {      
+        font-size: 200%;
+    }
+
+    .jumbo-text {
+        font-size: 140%;
+        max-width: 60%;
     }
 
 }
