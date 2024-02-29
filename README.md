@@ -549,3 +549,50 @@ Note
 ## Testing
 
 Please click [here]() to see all the testing that was carried out for the web application.
+
+---
+
+## Deployment
+
+### **Forking the GitHub Repository**
+
+By forking the GitHub Repository you make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository.
+
++ Log in to GitHub and go to the Github Repository.
++ Click on the fork button in the top right hand corner of the page.
++ You should now have a copy of the original repository in your GitHub account.
+
+### **Cloning the GitHub Repository**
+
++ Go the GitHub repository
++ Click on the 'Code' button
++ In the dropdown menu click on 'HTTPS'
++ Copy the link to the clipboard
++ Open Git Bash
++ Locate the desired directory where you want to place the cloned directory
++ Type 'git clone' and then paste the copied URL
++ Press 'enter' to create the clone
+
+### **Heroku**
+
+This project was deployed on Heroku.
+
++ To begin, we need to create both the Procfile and requirements.txt files respectively. Navigate to the terminal in GitPod and run the following commands:
+
+web: python app.py > Procfile
+
+pip3 freeze --local > requirements.txt
+
++ Commit both the ProcFile and requirements.txt to your git repository in the root directory.
++ Create an account on Heroku.
++ On your dashboard, select dropdown "New" and then "Create new app".
++ Type the name of the app and select the closest region. Select "Create app".
++ In the Application Dashboard, navigate to the "Deploy" tab and select the Deployment Method, GitHub, then select your Repository. Select "Connect".
++ Navigate to the "Settings" tab.
++ Under Config Vars, select "Reveal Config Vars" and set key/value pairs from your env.py file in Git for the following: IP, MONGO_DBNAME, MONGO_URI, PORT, SECRET_KEY.
++ Go back to the "Deploy" tab.
++ Under Automatic deploys, select main and then "Enable Automatic Deploys".
++ When the deployment has been successful, click on "Open App" in the top-right hand corner of the dashboard to launch the app.
+
+---
+
