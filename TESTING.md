@@ -278,3 +278,39 @@ In desktop mode the report clearly shows that the results are of a high percenta
 </details>
 
 For mobile the performance slightly dipped below 90. Having reviewed this and looked at the performance on a mobile device, the score was found not to be of any concern, as the perfomrnace was high on all devices tested on.
+
+---
+
+## Responsiveness
+
+#### Live
+
+The website was tested on the following live devices:
++ **iiyama desktop monitor - 1920x1080 resolution**
+    + the site performed well on a desktop, running smoothly throughout.
++ **Google Pixel 7**
+    + the site was tested thoroughly on this mobile device. The site is smooth and responsive throughout on both orientations. There was a slight issue with the jumbotron text in landscape mode (for details please click [here](#site---landscape-mode)).
++ **Amazon Fire Tablet HD**
+    + the site was tested on this tablet and worked very well. Responsive, looked good in both orientations and was smooth thoughout navigation.
++ **iPhone 11**
+    + the site navigated and looked good on an iphone. There was no issues to note.
+
+#### Simulation
+
+The site was also tested using Chrome Developer Tools on the following setups:
++ iPhone SE
++ iPhone XR
++ iPhone 12 Pro
++ Pixel 5
++ Samsung Galaxy S8+
++ Samsung Galazy S20 Ultra
++ Galaxy Fold
++ Samsung Galaxy A51/71
++ iPad Air
++ iPad Mini
++ Surface Pro 7
++ Surface Duo
++ Nest Hub
++ Nest Hub Max
+
+The site performed as expected and was responsive, with all functionality and navigation working well.
