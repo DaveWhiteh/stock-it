@@ -612,3 +612,9 @@ Single-Picture - Image by Perawit Boonchu - https://www.vecteezy.com/photo/73593
 
 Mobile and Laptop Composition - Image by Vectonauta - https://www.freepik.com/free-psd/isolated-tablet-laptop-smartphone-composition_40505824.htm#query=computer%20tablet%20phone&position=0&from_view=keyword&track=ais&uuid=8ef37546-5e45-4499-9ae6-17518634e788
 
+---
+
+## Acknowledgements
+
++ Bristol City College and Ben Smith for there understanding and patience throughout the project.
++ The Code Institute community on Slack
