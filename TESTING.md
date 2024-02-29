@@ -289,7 +289,7 @@ The website was tested on the following live devices:
 + **iiyama desktop monitor - 1920x1080 resolution**
     + the site performed well on a desktop, running smoothly throughout.
 + **Google Pixel 7**
-    + the site was tested thoroughly on this mobile device. The site is smooth and responsive throughout on both orientations. There was a slight issue with the jumbotron text in landscape mode (for details please click [here](#site---landscape-mode)).
+    + the site was tested thoroughly on this mobile device. The site is smooth and responsive throughout on both orientations. There was a slight issue with the jumbotron text in landscape mode (for details please click [here](#mobile---landscape-mode)).
 + **Amazon Fire Tablet HD**
     + the site was tested on this tablet and worked very well. Responsive, looked good in both orientations and was smooth thoughout navigation.
 + **iPhone 11**
@@ -325,3 +325,20 @@ The web application was tested on the following browsers:
 + Mozilla Firefox
 
 On these two browsers the site performed well, no issues were noticed.
+
+---
+
+## Bugs and Fixes
+
+#### Mobile - Landscape Mode
+
+This was an issue when testing the responsiveness of the site on mobile device.
+
+***Issue/Feature*** - The Jumbotron title and text was too big pushing everything below it down and out of sync.
+
+***Resolution*** - Added media queries to the css so that for mobile devices in landscape mode, the text and margins were made smaller.
+
+<details>
+<summary>Code After</summary>
+<img src="static/images/readme/testing/testing-responsiveness-issue-mobile-landscape.jpg" width="350">
+</details>
