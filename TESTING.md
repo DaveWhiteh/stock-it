@@ -248,7 +248,9 @@ The Javascript was tested using the validation site [JSHint](https://jshint.com/
 <img src="static/images/readme/testing/testing-script-jshint.jpg" width="750">
 </details>
 
-### Colour Contrast
+---
+
+## Colour Contrast Validation
 
 The Site was tested using the [a11y Color Contrast Accessibility Validator](https://color.a11y.com/). No errors were found.
 
@@ -256,3 +258,23 @@ The Site was tested using the [a11y Color Contrast Accessibility Validator](http
 <summary>Color Contrast</summary>
 <img src="static/images/readme/testing/testing-color-contrast.jpg" width="750">
 </details>
+
+---
+
+## Performance
+
+The Site was tested for Performance, Accessibility, Best Practices and SEO, using the Lighthouse Report in the Google Developer Tools.
+
+<details>
+<summary>Desktop</summary>
+<img src="static/images/readme/testing/testing-performance-desktop.jpg" width="750">
+</details>
+
+In desktop mode the report clearly shows that the results are of a high percentage and no action was taken to boost any of the four categories.
+
+<details>
+<summary>Mobile</summary>
+<img src="static/images/readme/testing/testing-performance-mobile.jpg" width="750">
+</details>
+
+For mobile the performance slightly dipped below 90. Having reviewed this and looked at the performance on a mobile device, the score was found not to be of any concern, as the perfomrnace was high on all devices tested on.
