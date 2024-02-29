@@ -229,3 +229,12 @@ The HTML was tested using the validation site [W3C HTML Validation Service](http
 <summary>Items - Delete</summary>
 <img src="static/images/readme/testing/testing-html-validator-delete-item.jpg" width="750">
 </details>
+
+### CSS
+
+The CSS was tested using the validation site [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/). No errors were found.
+
+<details>
+<summary>Custom CSS</summary>
+<img src="static/images/readme/testing/testing-css-validator.jpg" width="750">
+</details>
