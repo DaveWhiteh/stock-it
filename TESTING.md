@@ -4,7 +4,7 @@
 
 ## Table of Contents
 
-1. [About](#user-stories)
+1. [User Stories](#user-stories)
 2. [Code Validation](#code-validation)
     + [HTML](#html)
     + [CSS](#css)
