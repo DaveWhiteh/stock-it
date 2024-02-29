@@ -1,5 +1,7 @@
 # Stock-!t
 
+![Stock-!t Responsive Mock-up](static/images/readme/responsive-mockup.jpg)
+
 ---
 
 ## About
