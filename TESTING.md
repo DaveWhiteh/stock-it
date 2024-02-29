@@ -2,6 +2,21 @@
 
 ---
 
+## Table of Contents
+
+1. [About](#user-stories)
+2. [Code Validation](#code-validation)
+    + [HTML](#html)
+    + [CSS](#css)
+    + [Javascript](#javascript)
+3. [Colour Contrast Validation](#colour-contrast-validation)
+4. [Performance](#performance)
+5. [Responsiveness](#responsiveness)
+6. [Browser Compatibility](#browser-compatibility)
+7. [Bugs and Fixes](#bugs-and-fixes)
+
+---
+
 ## User Stories
 
 ### **As a First-time User:**
@@ -103,9 +118,9 @@
 <img src="static/images/readme/features-items-delete-desktop.jpg" width="750">
 </details>
 
-+ When the user logs in they will be taken to there own dashboard. From here they can click on the All Items panel where they will be taken to the page which will list all of the users items. They also have the option to click on the location panel, then click on a location of choice. In the chosen location will then show only the items assigned to that specific location. Within the item page the user will have the 'add item' button which will take the user to the add location page. This page will allow the user to input the Location, Item Name, Quantity, Minimum Quantity, Price, Purchase Date, Expiry Date and Note.
++ When the user logs in they will be taken to there own dashboard. From here they can click on the All Items panel where they will be taken to the page which will list all of the users items. They also have the option to click on the location panel, then click on a location of choice. In the chosen location will then show only the items assigned to that specific location. Within the item page the user will have the 'add item' button which will take the user to the add item page. This page will allow the user to input the Location, Item Name, Quantity, Minimum Quantity, Price, Purchase Date, Expiry Date and Note.
 
-+ To edit the items the user will click on the three dots and within the dropdown, select edit. This will take the user to the edit item page, where the user can edit the input fields, Location, Item Name, Quantity, Minimum Quantity, Price, Purchase Date, Expiry Date and Note. These will be pre-populated with the current data that the user inputted when first adding the item. They can then submit the form. If they didn't want to edit they can cancel, which will not submit any changes and take them back to the location page instead.
++ To edit the items the user will click on the three dots and within the dropdown, select edit. This will take the user to the edit item page, where the user can edit the input fields, Location, Item Name, Quantity, Minimum Quantity, Price, Purchase Date, Expiry Date and Note. These will be pre-populated with the current data that the user inputted when first adding the item. They can then submit the form. If they didn't want to edit they can cancel, which will not submit any changes and take them back to the item page instead.
 
 + Deleting the item is done in a similar way to editing, whereby the user will select delete from the dropdown instead. The delete item page will then instruct the user, asking them to confirm there deletion of the item.
 
@@ -277,13 +292,13 @@ In desktop mode the report clearly shows that the results are of a high percenta
 <img src="static/images/readme/testing/testing-performance-mobile.jpg" width="750">
 </details>
 
-For mobile the performance slightly dipped below 90. Having reviewed this and looked at the performance on a mobile device, the score was found not to be of any concern, as the perfomrnace was high on all devices tested on.
+For mobile the performance slightly dipped below 90. Having reviewed this and looked at the performance on a mobile device, the score was found not to be of any concern, as the perfomrnace was high on all live mobile devices tested on.
 
 ---
 
 ## Responsiveness
 
-#### Live
+### Live
 
 The website was tested on the following live devices:
 + **iiyama desktop monitor - 1920x1080 resolution**
@@ -295,7 +310,7 @@ The website was tested on the following live devices:
 + **iPhone 11**
     + the site navigated and looked good on an iphone. There was no issues to note.
 
-#### Simulation
+### Simulation
 
 The site was also tested using Chrome Developer Tools on the following setups:
 + iPhone SE
@@ -330,7 +345,7 @@ On these two browsers the site performed well, no issues were noticed.
 
 ## Bugs and Fixes
 
-#### Mobile - Landscape Mode
+### Mobile - Landscape Mode
 
 This was an issue when testing the responsiveness of the site on mobile device.
 
