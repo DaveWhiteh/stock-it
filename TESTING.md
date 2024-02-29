@@ -238,3 +238,12 @@ The CSS was tested using the validation site [W3C CSS Validation Service](https:
 <summary>Custom CSS</summary>
 <img src="static/images/readme/testing/testing-css-validator.jpg" width="750">
 </details>
+
+### Javascript
+
+The Javascript was tested using the validation site [JSHint](https://jshint.com/). No errors were found.
+
+<details>
+<summary>Custom Javascript</summary>
+<img src="static/images/readme/testing/testing-script-jshint.jpg" width="750">
+</details>
