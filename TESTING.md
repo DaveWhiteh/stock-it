@@ -314,3 +314,14 @@ The site was also tested using Chrome Developer Tools on the following setups:
 + Nest Hub Max
 
 The site performed as expected and was responsive, with all functionality and navigation working well.
+
+---
+
+## Browser Compatibility
+
+The web application was tested on the following browsers:
+
++ Google Chrome
++ Mozilla Firefox
+
+On these two browsers the site performed well, no issues were noticed.
