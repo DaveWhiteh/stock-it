@@ -247,3 +247,12 @@ The Javascript was tested using the validation site [JSHint](https://jshint.com/
 <summary>Custom Javascript</summary>
 <img src="static/images/readme/testing/testing-script-jshint.jpg" width="750">
 </details>
+
+### Colour Contrast
+
+The Site was tested using the [a11y Color Contrast Accessibility Validator](https://color.a11y.com/). No errors were found.
+
+<details>
+<summary>Color Contrast</summary>
+<img src="static/images/readme/testing/testing-color-contrast.jpg" width="750">
+</details>
