@@ -166,3 +166,66 @@
 </details>
 
 + The process for the whole CRUD functionality within the web application for both locations and items has been done in an easy way for the user to follow. With text on each page, giving the user simple instructions to follow, they can navigate through all CRUD funtionality seamlessly.
+
+---
+
+## Code Validation
+
+### HTML
+
+The HTML was tested using the validation site [W3C HTML Validation Service](https://validator.w3.org/). No errors were found.
+
+<details>
+<summary>Home</summary>
+<img src="static/images/readme/testing/testing-html-validator-home.jpg" width="750">
+</details>
+
+<details>
+<summary>Register</summary>
+<img src="static/images/readme/testing/testing-html-validator-register.jpg" width="750">
+</details>
+
+<details>
+<summary>Login</summary>
+<img src="static/images/readme/testing/testing-html-validator-login.jpg" width="750">
+</details>
+
+<details>
+<summary>Dashboard</summary>
+<img src="static/images/readme/testing/testing-html-validator-dashboard.jpg" width="750">
+</details>
+
+<details>
+<summary>Locations</summary>
+<img src="static/images/readme/testing/testing-html-validator-locations.jpg" width="750">
+</details>
+
+<details>
+<summary>Locations - Add</summary>
+<img src="static/images/readme/testing/testing-html-validator-add-location.jpg" width="750">
+</details>
+
+<details>
+<summary>Locations - Edit</summary>
+<img src="static/images/readme/testing/testing-html-validator-edit-location.jpg" width="750">
+</details>
+
+<details>
+<summary>Locations - Delete</summary>
+<img src="static/images/readme/testing/testing-html-validator-delete-location.jpg" width="750">
+</details>
+
+<details>
+<summary>Items - Add</summary>
+<img src="static/images/readme/testing/testing-html-validator-add-item.jpg" width="750">
+</details>
+
+<details>
+<summary>Items - Edit</summary>
+<img src="static/images/readme/testing/testing-html-validator-edit-item.jpg" width="750">
+</details>
+
+<details>
+<summary>Items - Delete</summary>
+<img src="static/images/readme/testing/testing-html-validator-delete-item.jpg" width="750">
+</details>
