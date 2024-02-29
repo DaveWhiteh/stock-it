@@ -596,3 +596,19 @@ pip3 freeze --local > requirements.txt
 
 ---
 
+## Credits
+
+### **Media**
+
+Jumbotron Image - Image by tirachardz on Freepik - https://www.freepik.com/free-photo/young-asia-entrepreneur-businesswoman-check-product-purchase-order-stock-save-tablet-computer-work-home-office-small-business-owner-online-market-delivery-lifestyle-freelance-concept_10074955.htm#query=young-asia-entrepreneur-businesswoman-check-product-purchase-order-stock-save-tablet-computer-work-home-office-small-business-owner-online-market-delivery-lifestyle-freelance-concept&position=5&from_view=search&track=sph&uuid=758b27a2-e8ad-4605-8eb0-2fbb26656ae2
+
+
+Double-Pictures-1 - Image by pch.vector on Freepik - https://www.freepik.com/free-photo/busy-african-american-woman-using-tablet_24539226.htm#query=busy-african-american-woman-using-tablet&position=1&from_view=search&track=sph&uuid=ce7664d7-0660-453d-83eb-0020b5f6b9a7
+
+
+Double-Pictures-2 - Image by krakenimages.com on Freepik - https://www.freepik.com/free-photo/young-beautiful-hispanic-woman-ecommerce-business-worker-using-smartphone-office_39578634.htm#query=young-beautiful-hispanic-woman-ecommerce-business-worker-using-smartphone-office&position=0&from_view=search&track=sph&uuid=05739c11-61b6-480c-a57c-e74bf7f5543a
+
+Single-Picture - Image by Perawit Boonchu - https://www.vecteezy.com/photo/7359323-small-business-sme-entrepreneur-of-young-asian-women-working-with-laptop-for-online-shopping-at-home-cheerful-and-happy-with-box-for-packaging-in-home-own-business-start-up-for-business-online
+
+Mobile and Laptop Composition - Image by Vectonauta - https://www.freepik.com/free-psd/isolated-tablet-laptop-smartphone-composition_40505824.htm#query=computer%20tablet%20phone&position=0&from_view=keyword&track=ais&uuid=8ef37546-5e45-4499-9ae6-17518634e788
+
