@@ -51,7 +51,7 @@ Stock !t, is a website that allows users to create multiple stock lists for both
 
 The site will be targeted towards individuals who require a basic yet effective way to manage inventory, whether that be from a personal perspective or a small business user.
 
-***Click **[here]()** to view the live website.***
+***Click **[here](https://flask-stock-it-b7a497238186.herokuapp.com/)** to view the live website.***
 
 ---
 
