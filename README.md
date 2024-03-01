@@ -589,7 +589,7 @@ Note
 
 ## Testing
 
-Please click [here]() to see all the testing that was carried out for the web application.
+Please click [here](https://github.com/DaveWhiteh/stock-it/blob/main/TESTING.md) to see all the testing that was carried out for the web application.
 
 ---
 
