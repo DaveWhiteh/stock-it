@@ -4,6 +4,47 @@
 
 ---
 
+## Table of Contents
+
+1. [About](#about)
+2. [User Experiences (UX)](#user-experiences-ux)
+    + [User Stories](#user-stories)
+    + [Strategy](#strategy)
+    + [Scope](#scope)
+    + [Structure](#structure)
+    + [Skeleton](#skeleton)
+    + [Surface](#surface)
+3. [Features](#features)
+    + [Navigation Bar](#navigation-bar)
+    + [Footer](#footer)
+    + [Home Page](#home-page)
+    + [Registration Page](#registration-page)
+    + [Login Page](#login-page)
+    + [Dashboard](#dashboard)
+    + [Locations](#locations)
+    + [Add / Edit Location](#add--edit-location)
+    + [Delete Location](#delete-location)
+    + [Items / All items](#items--all-items)
+    + [Delete Item](#delete-item)
+    + [Logout](#logout)
+4. [Future Features](#future-features)
+5. [Database Design and Creation](#database-design-and-creation)
+6. [Technologies Used](#technologies-used)
+    + [Languages](#languages)
+    + [Frameworks & Libraries](#frameworks--libraries)
+    + [Programs](#programs)
+    + [Websites](#websites)
+7. [Testing](#testing)
+8. [Deployment](#deployment)
+    + [Forking the GitHub Repository](#forking-the-github-repository)
+    + [Cloning the GitHub Repository](#cloning-the-github-repository)
+    + [Heroku](#heroku)
+9. [Credits](#credits)
+    + [Media](#media)
+10. [Acknowledgements](#acknowledgements)
+
+---
+
 ## About
 
 Stock !t, is a website that allows users to create multiple stock lists for both personal and small business use. The user can create an unlimited amount of locations, for example, kitchen, garage, racking 1, racking 2, etc. Then in these locations you can create stock lists which will help the user keep on top of how many items they have, noting the name, description, quantity, date of purchase and expiry date.
@@ -255,7 +296,7 @@ This page essentially has been created to advertise and showcase what the web ap
 
 + This last section is a single full width image, that essentially sums up how stock-!t could be used in one of the environments mentioned within the home page.
 
-### **Registeration Page**
+### **Registration Page**
 
 <details>
 <summary>Screenshots</summary>
