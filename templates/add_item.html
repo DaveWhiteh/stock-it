@@ -20,6 +20,7 @@
                 <!-- location name -->
                 <div class="row no-margin-bottom">
                     <div class="input-field col s12">
+                        <i class="prefix fa-solid fa-circle-question icon-blue tooltipped" data-tooltip="At least one location must be added before adding an item. To add a location please navigate to the locations page and click on add location."></i>
                         <select id="location_name" name="location_name" class="validate" required>
                             <option class="text-blue" value="" disabled selected>Choose Location</option>
                             {% for location in locations %}

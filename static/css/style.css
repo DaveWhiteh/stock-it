@@ -438,6 +438,15 @@ a {
     border-radius: 8px;
 }
 
+.material-tooltip {
+    max-width: 275px;
+    line-height: 1.5rem;
+    font-weight: 300;
+    text-align: left;
+    background-color: #9FCBEE;
+    color: #01016F;
+}
+
 /* --------------------------------------------------------------------------------------- Footer */
 
 .footer-media {
