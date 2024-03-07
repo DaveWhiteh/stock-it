@@ -38,21 +38,37 @@ on the items page.
 
 @app.route("/search_items_all", methods=["GET", "POST"])
 def search_items_all():
+    # get the user id of the user in session
+    user_id = get_user_id()
+
+    # get the search query from the submitted form
     query = request.form.get("query")
+
+    # get todays date
     todays_date = datetime.now()
         
-    items = list(mongo.db.items.find({"$text": {"$search": query}}))
+    # search the items in the db
+    items = list(mongo.db.items.find({"user_id": user_id, "$text": {"$search": query}}))
     return render_template("items.html", items=items, todays_date=todays_date)
 
 
 @app.route("/search_items/<location_id>", methods=["GET", "POST"])
 def search_items(location_id):
+    # get the user id of the user in session
+    user_id = get_user_id()
+
+    # get the search query from the submitted form
     query = request.form.get("query")
+
+    # get todays date
     todays_date = datetime.now()
+
+    # get the location name from the db
     location = mongo.db.locations.find_one({"_id": ObjectId(location_id)})
     location_name = location["location_name"]
 
-    items = list(mongo.db.items.find({"$text": {"$search": query}}))
+    # search the items in the db
+    items = list(mongo.db.items.find({"user_id": user_id, "$text": {"$search": query}}))
     return render_template("items.html", items=items, todays_date=todays_date, location_id=location_id, location_name=location_name)
 
 
